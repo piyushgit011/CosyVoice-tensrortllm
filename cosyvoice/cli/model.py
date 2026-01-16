@@ -280,7 +280,9 @@ class CosyVoice2Model(CosyVoiceModel):
         engine_args = EngineArgs(model=model_dir,
                                  skip_tokenizer_init=True,
                                  enable_prompt_embeds=True,
-                                 gpu_memory_utilization=0.2)
+                                 gpu_memory_utilization=0.8,  # Increased from 0.2 to 0.8 (80% GPU usage!)
+                                 max_num_batched_tokens=8192,  # Larger batches for better throughput
+                                 max_num_seqs=128)  # More concurrent sequences
         self.llm.vllm = LLMEngine.from_engine_args(engine_args)
         self.llm.lock = threading.Lock()
         del self.llm.llm.model.model.layers

@@ -1,0 +1,76 @@
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+INFO 01-16 09:19:20 [__init__.py:216] Automatically detected platform cuda.
+================================================================================
+🧪 Testing Modified vLLM Configuration (80% GPU Utilization)
+================================================================================
+
+⏳ Loading CosyVoice3 with modified vLLM settings...
+   • gpu_memory_utilization: 0.8 (was 0.2)
+   • max_num_batched_tokens: 8192 (was default)
+   • max_num_seqs: 128 (was default)
+2026-01-16 09:19:34,585 INFO input frame rate=25
+/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+[1;31m2026-01-16 09:19:39.323921208 [E:onnxruntime:Default, provider_bridge_ort.cc:1744 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1426 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.11: cannot open shared object file: No such file or directory
+[m
+[0;93m2026-01-16 09:19:39.323942477 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:870 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Please reference https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirementsto ensure all dependencies are met.[m
+2026-01-16 09:19:40,752 INFO use wetext frontend
+INFO 01-16 09:19:51 [model.py:547] Resolved architecture: Qwen2ForCausalLM
+`torch_dtype` is deprecated! Use `dtype` instead!
+INFO 01-16 09:19:51 [model.py:1510] Using max model len 32768
+WARNING 01-16 09:19:51 [arg_utils.py:1554] --enable-prompt-embeds and --enable-prefix-caching are not supported together in V1. Prefix caching has been disabled.
+INFO 01-16 09:19:52 [scheduler.py:205] Chunked prefill is enabled with max_num_batched_tokens=8192.
+WARNING 01-16 09:19:52 [__init__.py:3036] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+/usr/local/lib/python3.12/dist-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+INFO 01-16 09:19:55 [__init__.py:216] Automatically detected platform cuda.
+================================================================================
+🧪 Testing Modified vLLM Configuration (80% GPU Utilization)
+================================================================================
+
+⏳ Loading CosyVoice3 with modified vLLM settings...
+   • gpu_memory_utilization: 0.8 (was 0.2)
+   • max_num_batched_tokens: 8192 (was default)
+   • max_num_seqs: 128 (was default)
+2026-01-16 09:20:03,744 INFO input frame rate=25
+/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+[1;31m2026-01-16 09:20:06.975394863 [E:onnxruntime:Default, provider_bridge_ort.cc:1744 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1426 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.11: cannot open shared object file: No such file or directory
+[m
+[0;93m2026-01-16 09:20:06.975413943 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:870 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Please reference https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirementsto ensure all dependencies are met.[m
+2026-01-16 09:20:08,396 INFO use wetext frontend
+INFO 01-16 09:20:11 [model.py:547] Resolved architecture: Qwen2ForCausalLM
+`torch_dtype` is deprecated! Use `dtype` instead!
+INFO 01-16 09:20:11 [model.py:1510] Using max model len 32768
+WARNING 01-16 09:20:11 [arg_utils.py:1554] --enable-prompt-embeds and --enable-prefix-caching are not supported together in V1. Prefix caching has been disabled.
+INFO 01-16 09:20:17 [scheduler.py:205] Chunked prefill is enabled with max_num_batched_tokens=8192.
+❌ Failed to load model: 
+        An attempt has been made to start a new process before the
+        current process has finished its bootstrapping phase.
+
+        This probably means that you are not using fork to start your
+        child processes and you have forgotten to use the proper idiom
+        in the main module:
+
+            if __name__ == '__main__':
+                freeze_support()
+                ...
+
+        The "freeze_support()" line can be omitted if the program
+        is not going to be frozen to produce an executable.
+
+        To fix this issue, refer to the "Safe importing of main module"
+        section in https://docs.python.org/3/library/multiprocessing.html
+        
+
+This might happen if:
+  1. Not enough GPU memory available (need ~26GB)
+  2. Other processes using GPU
+  3. vLLM version incompatibility
+❌ Failed to load model: Engine core initialization failed. See root cause above. Failed core proc(s): {}
+
+This might happen if:
+  1. Not enough GPU memory available (need ~26GB)
+  2. Other processes using GPU
+  3. vLLM version incompatibility

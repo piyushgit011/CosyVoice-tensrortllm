@@ -1,0 +1,62 @@
+[
+  {
+    "config_name": "vLLM FP32 (baseline)",
+    "quantization": "fp32",
+    "use_vllm": true,
+    "text_length": 123,
+    "audio_duration_sec": 29.92,
+    "total_latency_sec": 10.97587275505066,
+    "ttfb_sec": 0.9030236403147379,
+    "rtf": 0.36374205414170085,
+    "memory_allocated_mb": 649.0849609375,
+    "memory_reserved_mb": 746.0,
+    "gpu_utilization_pct": 98,
+    "success": true,
+    "error": ""
+  },
+  {
+    "config_name": "vLLM FP16 (previous best)",
+    "quantization": "fp16",
+    "use_vllm": true,
+    "text_length": 123,
+    "audio_duration_sec": 29.92,
+    "total_latency_sec": 8.493837833404541,
+    "ttfb_sec": 0.8648382822672526,
+    "rtf": 0.2923056765777155,
+    "memory_allocated_mb": 716.09326171875,
+    "memory_reserved_mb": 862.0,
+    "gpu_utilization_pct": 10,
+    "success": true,
+    "error": ""
+  },
+  {
+    "config_name": "vLLM FP16 + Large Batch",
+    "quantization": "fp16",
+    "use_vllm": true,
+    "text_length": 0,
+    "audio_duration_sec": 0,
+    "total_latency_sec": 0,
+    "ttfb_sec": 0,
+    "rtf": 0,
+    "memory_allocated_mb": 0,
+    "memory_reserved_mb": 0,
+    "gpu_utilization_pct": 0,
+    "success": false,
+    "error": "CosyVoice3.__init__() got an unexpected keyword argument 'max_num_batched_tokens'"
+  },
+  {
+    "config_name": "vLLM FP16 + XL Batch",
+    "quantization": "fp16",
+    "use_vllm": true,
+    "text_length": 0,
+    "audio_duration_sec": 0,
+    "total_latency_sec": 0,
+    "ttfb_sec": 0,
+    "rtf": 0,
+    "memory_allocated_mb": 0,
+    "memory_reserved_mb": 0,
+    "gpu_utilization_pct": 0,
+    "success": false,
+    "error": "CosyVoice3.__init__() got an unexpected keyword argument 'max_num_batched_tokens'"
+  }
+]

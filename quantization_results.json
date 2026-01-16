@@ -1,0 +1,54 @@
+[
+  {
+    "config_name": "vLLM + FP32",
+    "fp16": false,
+    "load_vllm": true,
+    "text_length": 123,
+    "audio_duration_sec": 29.92,
+    "total_latency_sec": 11.31887674331665,
+    "ttfb_sec": 1.005843162536621,
+    "rtf": 0.3761592830008591,
+    "memory_allocated_mb": 3370.4365234375,
+    "success": true,
+    "error": ""
+  },
+  {
+    "config_name": "vLLM + FP16",
+    "fp16": true,
+    "load_vllm": true,
+    "text_length": 123,
+    "audio_duration_sec": 29.92,
+    "total_latency_sec": 9.081513404846191,
+    "ttfb_sec": 0.890574057896932,
+    "rtf": 0.31314674142542603,
+    "memory_allocated_mb": 3446.00732421875,
+    "success": true,
+    "error": ""
+  },
+  {
+    "config_name": "PyTorch + FP32",
+    "fp16": false,
+    "load_vllm": false,
+    "text_length": 123,
+    "audio_duration_sec": 23.52,
+    "total_latency_sec": 12.957138538360596,
+    "ttfb_sec": 1.3834608395894368,
+    "rtf": 0.5508987473792771,
+    "memory_allocated_mb": 3516.328125,
+    "success": true,
+    "error": ""
+  },
+  {
+    "config_name": "PyTorch + FP16",
+    "fp16": true,
+    "load_vllm": false,
+    "text_length": 123,
+    "audio_duration_sec": 40.56,
+    "total_latency_sec": 23.0437068939209,
+    "ttfb_sec": 1.611843188603719,
+    "rtf": 0.5678832133739391,
+    "memory_allocated_mb": 4968.35595703125,
+    "success": true,
+    "error": ""
+  }
+]

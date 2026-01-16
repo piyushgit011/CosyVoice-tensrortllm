@@ -1,0 +1,460 @@
+INFO 01-16 08:47:02 [__init__.py:216] Automatically detected platform cuda.
+🚀 CosyVoice3 Quantization Benchmark
+Testing different configurations for optimal latency
+
+
+================================================================================
+Testing configuration: vLLM + FP32
+  vLLM: True, FP16: False
+================================================================================
+Loading model...
+2026-01-16 08:47:11,675 INFO input frame rate=25
+/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+[1;31m2026-01-16 08:47:15.207811316 [E:onnxruntime:Default, provider_bridge_ort.cc:1744 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1426 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.11: cannot open shared object file: No such file or directory
+[m
+[0;93m2026-01-16 08:47:15.207834775 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:870 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Please reference https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirementsto ensure all dependencies are met.[m
+2026-01-16 08:47:16,632 INFO use wetext frontend
+INFO 01-16 08:47:19 [model.py:547] Resolved architecture: Qwen2ForCausalLM
+`torch_dtype` is deprecated! Use `dtype` instead!
+INFO 01-16 08:47:19 [model.py:1510] Using max model len 32768
+WARNING 01-16 08:47:19 [arg_utils.py:1554] --enable-prompt-embeds and --enable-prefix-caching are not supported together in V1. Prefix caching has been disabled.
+INFO 01-16 08:47:21 [scheduler.py:205] Chunked prefill is enabled with max_num_batched_tokens=2048.
+WARNING 01-16 08:47:21 [__init__.py:3036] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+INFO 01-16 08:47:23 [__init__.py:216] Automatically detected platform cuda.
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:28 [core.py:644] Waiting for init message from front-end.
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:28 [core.py:77] Initializing a V1 LLM engine (v0.11.0) with config: model='pretrained_models/Fun-CosyVoice3-0.5B/vllm', speculative_config=None, tokenizer='pretrained_models/Fun-CosyVoice3-0.5B/vllm', skip_tokenizer_init=True, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=pretrained_models/Fun-CosyVoice3-0.5B/vllm, enable_prefix_caching=False, chunked_prefill_enabled=True, pooler_config=None, compilation_config={"level":3,"debug_dump_path":"","cache_dir":"","backend":"","custom_ops":[],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output","vllm.mamba_mixer2","vllm.mamba_mixer","vllm.short_conv","vllm.linear_attention","vllm.plamo2_mamba_mixer","vllm.gdn_attention","vllm.sparse_attn_indexer"],"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{"enable_auto_functionalized_v2":false},"inductor_passes":{},"cudagraph_mode":[2,1],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"use_inductor_graph_partition":false,"pass_config":{},"max_capture_size":256,"local_cache_dir":null}
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:29 [parallel_state.py:1208] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=20366)[0;0m WARNING 01-16 08:47:29 [topk_topp_sampler.py:66] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:29 [gpu_model_runner.py:2602] Starting to load model pretrained_models/Fun-CosyVoice3-0.5B/vllm...
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:29 [gpu_model_runner.py:2634] Loading model from scratch...
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:29 [cuda.py:366] Using Flash Attention backend on V1 engine.
+[1;36m(EngineCore_DP0 pid=20366)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[1;36m(EngineCore_DP0 pid=20366)[0;0m Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  9.19it/s]
+[1;36m(EngineCore_DP0 pid=20366)[0;0m Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  9.18it/s]
+[1;36m(EngineCore_DP0 pid=20366)[0;0m 
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:30 [default_loader.py:267] Loading weights took 0.14 seconds
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:30 [gpu_model_runner.py:2653] Model loading took 0.6953 GiB and 0.285933 seconds
+[1;36m(EngineCore_DP0 pid=20366)[0;0m 2026-01-16 08:47:31,042 DEBUG Starting new HTTPS connection (1): stats.vllm.ai:443
+[1;36m(EngineCore_DP0 pid=20366)[0;0m 2026-01-16 08:47:31,197 DEBUG https://stats.vllm.ai:443 "POST / HTTP/1.1" 200 None
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:33 [backends.py:548] Using cache directory: /root/.cache/vllm/torch_compile_cache/8801fce406/rank_0_0/backbone for vLLM's torch.compile
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:33 [backends.py:559] Dynamo bytecode transform time: 2.85 s
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:34 [backends.py:164] Directly load the compiled graph(s) for dynamic shape from the cache, took 0.899 s
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:35 [monitor.py:34] torch.compile takes 2.85 s in total
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:35 [gpu_worker.py:298] Available KV cache memory: 5.42 GiB
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:36 [kv_cache_utils.py:1087] GPU KV cache size: 473,472 tokens
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:36 [kv_cache_utils.py:1091] Maximum concurrency for 32,768 tokens per request: 14.45x
+[1;36m(EngineCore_DP0 pid=20366)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  17%|█▋        | 6/35 [00:00<00:00, 59.37it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  37%|███▋      | 13/35 [00:00<00:00, 60.90it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  60%|██████    | 21/35 [00:00<00:00, 66.90it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  83%|████████▎ | 29/35 [00:00<00:00, 69.80it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 35/35 [00:00<00:00, 63.85it/s]
+[1;36m(EngineCore_DP0 pid=20366)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/19 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):  11%|█         | 2/19 [00:00<00:00, 18.08it/s]Capturing CUDA graphs (decode, FULL):  47%|████▋     | 9/19 [00:00<00:00, 46.17it/s]Capturing CUDA graphs (decode, FULL):  84%|████████▍ | 16/19 [00:00<00:00, 56.02it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 19/19 [00:00<00:00, 52.75it/s]
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:37 [gpu_model_runner.py:3480] Graph capturing finished in 1 secs, took 0.32 GiB
+[1;36m(EngineCore_DP0 pid=20366)[0;0m INFO 01-16 08:47:37 [core.py:210] init engine (profile, create kv cache, warmup model) took 7.17 seconds
+INFO 01-16 08:47:37 [loggers.py:147] Engine 000: vllm cache_config_info with initialization after num_gpu_blocks is: 29592
+[01/16/2026-08:47:38] [TRT] [I] Loaded engine size: 1270 MiB
+[01/16/2026-08:47:39] [TRT] [I] [MS] Running engine with multi stream info
+[01/16/2026-08:47:39] [TRT] [I] [MS] Number of aux streams is 1
+[01/16/2026-08:47:39] [TRT] [I] [MS] Number of total worker streams is 2
+[01/16/2026-08:47:39] [TRT] [I] [MS] The main stream provided by execute/enqueue calls is the first worker stream
+[01/16/2026-08:47:39] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +3552, now: CPU 0, GPU 4815 (MiB)
+✅ Model loaded in 31.98s
+Warming up...
+  0%|          | 0/1 [00:00<?, ?it/s]2026-01-16 08:47:39,247 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+/usr/local/lib/python3.12/dist-packages/torchaudio/_backend/utils.py:213: UserWarning: In 2.9, this function's implementation will be changed to use torchaudio.load_with_torchcodec` under the hood. Some parameters like ``normalize``, ``format``, ``buffer_size``, and ``backend`` will be ignored. We recommend that you port your code to rely directly on TorchCodec's decoder instead: https://docs.pytorch.org/torchcodec/stable/generated/torchcodec.decoders.AudioDecoder.html#torchcodec.decoders.AudioDecoder.
+  warnings.warn(
+2026-01-16 08:47:39,762 INFO synthesis text 你好，我是语音合成系统。
+/workspace/CosyVoice-tensrortllm/cosyvoice/cli/model.py:103: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with self.llm_context, torch.cuda.amp.autocast(self.fp16 is True and hasattr(self.llm, 'vllm') is False):
+WARNING 01-16 08:47:39 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+/workspace/CosyVoice-tensrortllm/cosyvoice/cli/model.py:417: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(self.fp16):
+2026-01-16 08:47:40,608 INFO yield speech len 1.36, rtf 0.6226157440858728
+2026-01-16 08:47:40,790 INFO yield speech len 1.72, rtf 0.10539348735365757
+100%|██████████| 1/1 [00:01<00:00,  1.56s/it]100%|██████████| 1/1 [00:01<00:00,  1.56s/it]
+Running inference:   0%|          | 0/3 [00:00<?, ?it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:47:40,809 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:47:41,317 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:47:41 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:47:41,696 INFO yield speech len 1.36, rtf 0.27877478038563447
+2026-01-16 08:47:41,882 INFO yield speech len 1.52, rtf 0.12214826910119307
+
+100%|██████████| 1/1 [00:01<00:00,  1.07s/it][A100%|██████████| 1/1 [00:01<00:00,  1.07s/it]
+Running inference:  33%|███▎      | 1/3 [00:01<00:02,  1.08s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:47:42,419 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+WARNING 01-16 08:47:42 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:47:42,795 INFO yield speech len 1.36, rtf 0.27623001266928277
+2026-01-16 08:47:43,171 INFO yield speech len 1.0, rtf 0.3764653205871582
+2026-01-16 08:47:43,565 INFO yield speech len 1.0, rtf 0.3931703567504883
+2026-01-16 08:47:43,789 INFO yield speech len 1.0, rtf 0.22393155097961426
+2026-01-16 08:47:44,105 INFO yield speech len 1.0, rtf 0.3158903121948242
+2026-01-16 08:47:44,391 INFO yield speech len 1.0, rtf 0.2864506244659424
+2026-01-16 08:47:44,690 INFO yield speech len 1.0, rtf 0.2983691692352295
+2026-01-16 08:47:44,995 INFO yield speech len 1.0, rtf 0.305025577545166
+2026-01-16 08:47:45,395 INFO yield speech len 1.0, rtf 0.39929986000061035
+2026-01-16 08:47:45,700 INFO yield speech len 1.0, rtf 0.3056449890136719
+2026-01-16 08:47:46,098 INFO yield speech len 1.08, rtf 0.36804057933666084
+
+100%|██████████| 1/1 [00:04<00:00,  4.22s/it][A100%|██████████| 1/1 [00:04<00:00,  4.22s/it]
+Running inference:  67%|██████▋   | 2/3 [00:05<00:02,  2.92s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:47:46,916 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+WARNING 01-16 08:47:46 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:47:47,316 INFO yield speech len 1.36, rtf 0.2941855612923117
+2026-01-16 08:47:47,622 INFO yield speech len 1.0, rtf 0.30571866035461426
+2026-01-16 08:47:47,932 INFO yield speech len 1.0, rtf 0.30999231338500977
+2026-01-16 08:47:48,227 INFO yield speech len 1.0, rtf 0.2947347164154053
+2026-01-16 08:47:48,476 INFO yield speech len 1.0, rtf 0.24853134155273438
+2026-01-16 08:47:48,687 INFO yield speech len 1.0, rtf 0.21120762825012207
+2026-01-16 08:47:48,976 INFO yield speech len 1.0, rtf 0.28896331787109375
+2026-01-16 08:47:49,277 INFO yield speech len 1.0, rtf 0.30039000511169434
+2026-01-16 08:47:49,592 INFO yield speech len 1.0, rtf 0.31554174423217773
+2026-01-16 08:47:49,883 INFO yield speech len 1.0, rtf 0.2899892330169678
+2026-01-16 08:47:50,294 INFO yield speech len 1.0, rtf 0.4112560749053955
+2026-01-16 08:47:50,692 INFO yield speech len 1.0, rtf 0.3980426788330078
+2026-01-16 08:47:51,194 INFO yield speech len 1.0, rtf 0.5011920928955078
+2026-01-16 08:47:51,601 INFO yield speech len 1.0, rtf 0.4075024127960205
+2026-01-16 08:47:52,106 INFO yield speech len 1.24, rtf 0.4067169081780218
+
+100%|██████████| 1/1 [00:06<00:00,  6.02s/it][A100%|██████████| 1/1 [00:06<00:00,  6.02s/it]
+Running inference: 100%|██████████| 3/3 [00:11<00:00,  4.34s/it]Running inference: 100%|██████████| 3/3 [00:11<00:00,  3.77s/it]
+
+📊 Results:
+   Mean TTFB: 1.0058s
+   Mean RTF:  0.3762
+   Memory:    3370.44 MB
+[rank0]:[W116 08:47:52.947205291 ProcessGroupNCCL.cpp:1538] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+
+================================================================================
+Testing configuration: vLLM + FP16
+  vLLM: True, FP16: True
+================================================================================
+Loading model...
+2026-01-16 08:47:58,240 INFO input frame rate=25
+/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+[1;31m2026-01-16 08:48:01.179153750 [E:onnxruntime:Default, provider_bridge_ort.cc:1744 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1426 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.11: cannot open shared object file: No such file or directory
+[m
+[0;93m2026-01-16 08:48:01.179176799 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:870 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Please reference https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirementsto ensure all dependencies are met.[m
+2026-01-16 08:48:02,445 INFO use wetext frontend
+INFO 01-16 08:48:04 [model.py:547] Resolved architecture: Qwen2ForCausalLM
+INFO 01-16 08:48:04 [model.py:1510] Using max model len 32768
+WARNING 01-16 08:48:04 [arg_utils.py:1554] --enable-prompt-embeds and --enable-prefix-caching are not supported together in V1. Prefix caching has been disabled.
+INFO 01-16 08:48:04 [scheduler.py:205] Chunked prefill is enabled with max_num_batched_tokens=2048.
+INFO 01-16 08:48:07 [__init__.py:216] Automatically detected platform cuda.
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:12 [core.py:644] Waiting for init message from front-end.
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:12 [core.py:77] Initializing a V1 LLM engine (v0.11.0) with config: model='pretrained_models/Fun-CosyVoice3-0.5B/vllm', speculative_config=None, tokenizer='pretrained_models/Fun-CosyVoice3-0.5B/vllm', skip_tokenizer_init=True, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=pretrained_models/Fun-CosyVoice3-0.5B/vllm, enable_prefix_caching=False, chunked_prefill_enabled=True, pooler_config=None, compilation_config={"level":3,"debug_dump_path":"","cache_dir":"","backend":"","custom_ops":[],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output","vllm.mamba_mixer2","vllm.mamba_mixer","vllm.short_conv","vllm.linear_attention","vllm.plamo2_mamba_mixer","vllm.gdn_attention","vllm.sparse_attn_indexer"],"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{"enable_auto_functionalized_v2":false},"inductor_passes":{},"cudagraph_mode":[2,1],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"use_inductor_graph_partition":false,"pass_config":{},"max_capture_size":256,"local_cache_dir":null}
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:12 [parallel_state.py:1208] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=20712)[0;0m WARNING 01-16 08:48:12 [topk_topp_sampler.py:66] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:12 [gpu_model_runner.py:2602] Starting to load model pretrained_models/Fun-CosyVoice3-0.5B/vllm...
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:13 [gpu_model_runner.py:2634] Loading model from scratch...
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:13 [cuda.py:366] Using Flash Attention backend on V1 engine.
+[1;36m(EngineCore_DP0 pid=20712)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[1;36m(EngineCore_DP0 pid=20712)[0;0m Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  9.19it/s]
+[1;36m(EngineCore_DP0 pid=20712)[0;0m Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  9.18it/s]
+[1;36m(EngineCore_DP0 pid=20712)[0;0m 
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:13 [default_loader.py:267] Loading weights took 0.14 seconds
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:13 [gpu_model_runner.py:2653] Model loading took 0.6953 GiB and 0.290059 seconds
+[1;36m(EngineCore_DP0 pid=20712)[0;0m 2026-01-16 08:48:14,447 DEBUG Starting new HTTPS connection (1): stats.vllm.ai:443
+[1;36m(EngineCore_DP0 pid=20712)[0;0m 2026-01-16 08:48:14,600 DEBUG https://stats.vllm.ai:443 "POST / HTTP/1.1" 200 None
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:17 [backends.py:548] Using cache directory: /root/.cache/vllm/torch_compile_cache/8801fce406/rank_0_0/backbone for vLLM's torch.compile
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:17 [backends.py:559] Dynamo bytecode transform time: 2.88 s
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:18 [backends.py:164] Directly load the compiled graph(s) for dynamic shape from the cache, took 0.897 s
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:18 [monitor.py:34] torch.compile takes 2.88 s in total
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:19 [gpu_worker.py:298] Available KV cache memory: 5.42 GiB
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:19 [kv_cache_utils.py:1087] GPU KV cache size: 473,472 tokens
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:19 [kv_cache_utils.py:1091] Maximum concurrency for 32,768 tokens per request: 14.45x
+[1;36m(EngineCore_DP0 pid=20712)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  17%|█▋        | 6/35 [00:00<00:00, 59.39it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  37%|███▋      | 13/35 [00:00<00:00, 61.05it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  60%|██████    | 21/35 [00:00<00:00, 67.03it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  83%|████████▎ | 29/35 [00:00<00:00, 68.57it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 35/35 [00:00<00:00, 63.24it/s]
+[1;36m(EngineCore_DP0 pid=20712)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/19 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):  11%|█         | 2/19 [00:00<00:00, 18.01it/s]Capturing CUDA graphs (decode, FULL):  47%|████▋     | 9/19 [00:00<00:00, 46.21it/s]Capturing CUDA graphs (decode, FULL):  84%|████████▍ | 16/19 [00:00<00:00, 55.47it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 19/19 [00:00<00:00, 52.41it/s]
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:21 [gpu_model_runner.py:3480] Graph capturing finished in 2 secs, took 0.32 GiB
+[1;36m(EngineCore_DP0 pid=20712)[0;0m INFO 01-16 08:48:21 [core.py:210] init engine (profile, create kv cache, warmup model) took 7.31 seconds
+INFO 01-16 08:48:21 [loggers.py:147] Engine 000: vllm cache_config_info with initialization after num_gpu_blocks is: 29592
+2026-01-16 08:48:21,591 WARNING DiT tensorRT fp16 engine have some performance issue, use at caution!
+2026-01-16 08:48:21,592 INFO Converting onnx to trt...
+[01/16/2026-08:48:21] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 10653, GPU 11672 (MiB)
+[01/16/2026-08:48:22] [TRT] [I] [MemUsageChange] Init builder kernel library: CPU -1539, GPU +0, now: CPU 8924, GPU 11672 (MiB)
+[01/16/2026-08:48:25] [TRT] [I] ----------------------------------------------------------------
+[01/16/2026-08:48:25] [TRT] [I] ONNX IR version:  0.0.8
+[01/16/2026-08:48:25] [TRT] [I] Opset version:    18
+[01/16/2026-08:48:25] [TRT] [I] Producer name:    pytorch
+[01/16/2026-08:48:25] [TRT] [I] Producer version: 2.3.1
+[01/16/2026-08:48:25] [TRT] [I] Domain:           
+[01/16/2026-08:48:25] [TRT] [I] Model version:    0
+[01/16/2026-08:48:25] [TRT] [I] Doc string:       
+[01/16/2026-08:48:25] [TRT] [I] ----------------------------------------------------------------
+[01/16/2026-08:48:26] [TRT] [I] Local timing cache in use. Profiling results in this builder pass will not be stored.
+[01/16/2026-08:48:26] [TRT] [I] Compiler backend is used during engine build.
+[01/16/2026-08:49:35] [TRT] [I] Detected 6 inputs and 1 output network tensors.
+[01/16/2026-08:49:36] [TRT] [I] Total Host Persistent Memory: 10560 bytes
+[01/16/2026-08:49:36] [TRT] [I] Total Device Persistent Memory: 0 bytes
+[01/16/2026-08:49:36] [TRT] [I] Max Scratch Memory: 135463424 bytes
+[01/16/2026-08:49:36] [TRT] [I] [BlockAssignment] Started assigning block shifts. This will take 16 steps to complete.
+[01/16/2026-08:49:36] [TRT] [I] [BlockAssignment] Algorithm ShiftNTopDown took 1.21055ms to assign 4 blocks to 16 nodes requiring 172450816 bytes.
+[01/16/2026-08:49:36] [TRT] [I] Total Activation Memory: 172450304 bytes
+[01/16/2026-08:49:36] [TRT] [I] Total Weights Memory: 662293632 bytes
+[01/16/2026-08:49:36] [TRT] [I] Compiler backend is used during engine execution.
+[01/16/2026-08:49:36] [TRT] [I] Engine generation completed in 69.914 seconds.
+[01/16/2026-08:49:36] [TRT] [I] [MemUsageStats] Peak memory usage of TRT CPU/GPU memory allocators: CPU 623 MiB, GPU 4815 MiB
+2026-01-16 08:49:38,520 INFO Succesfully convert onnx to trt...
+[01/16/2026-08:49:39] [TRT] [I] Loaded engine size: 639 MiB
+[01/16/2026-08:49:39] [TRT] [I] [MS] Running engine with multi stream info
+[01/16/2026-08:49:39] [TRT] [I] [MS] Number of aux streams is 1
+[01/16/2026-08:49:39] [TRT] [I] [MS] Number of total worker streams is 2
+[01/16/2026-08:49:39] [TRT] [I] [MS] The main stream provided by execute/enqueue calls is the first worker stream
+[01/16/2026-08:49:39] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +165, now: CPU 0, GPU 796 (MiB)
+✅ Model loaded in 104.21s
+Warming up...
+  0%|          | 0/1 [00:00<?, ?it/s]2026-01-16 08:49:39,976 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:49:40,771 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:49:40 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:49:41,319 INFO yield speech len 1.36, rtf 0.4033600582795984
+2026-01-16 08:49:41,417 INFO yield speech len 1.72, rtf 0.05696693132090014
+100%|██████████| 1/1 [00:01<00:00,  1.47s/it]100%|██████████| 1/1 [00:01<00:00,  1.47s/it]
+Running inference:   0%|          | 0/3 [00:00<?, ?it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:49:41,450 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:49:41,932 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:49:41 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:49:42,318 INFO yield speech len 1.36, rtf 0.2835252705742331
+2026-01-16 08:49:42,420 INFO yield speech len 1.52, rtf 0.0669578188344052
+
+100%|██████████| 1/1 [00:00<00:00,  1.03it/s][A100%|██████████| 1/1 [00:00<00:00,  1.03it/s]
+Running inference:  33%|███▎      | 1/3 [00:00<00:01,  1.03it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:49:42,932 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+WARNING 01-16 08:49:42 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:49:43,328 INFO yield speech len 1.36, rtf 0.29101476949803967
+2026-01-16 08:49:43,665 INFO yield speech len 1.0, rtf 0.3371143341064453
+2026-01-16 08:49:43,964 INFO yield speech len 1.0, rtf 0.29865574836730957
+2026-01-16 08:49:44,216 INFO yield speech len 1.0, rtf 0.25232553482055664
+2026-01-16 08:49:44,434 INFO yield speech len 1.0, rtf 0.21749472618103027
+2026-01-16 08:49:44,637 INFO yield speech len 1.0, rtf 0.20333123207092285
+2026-01-16 08:49:44,918 INFO yield speech len 1.0, rtf 0.27996349334716797
+2026-01-16 08:49:45,135 INFO yield speech len 1.0, rtf 0.21727824211120605
+2026-01-16 08:49:45,425 INFO yield speech len 1.0, rtf 0.29001688957214355
+2026-01-16 08:49:45,733 INFO yield speech len 1.0, rtf 0.30782175064086914
+2026-01-16 08:49:45,931 INFO yield speech len 1.08, rtf 0.18321077028910318
+
+100%|██████████| 1/1 [00:03<00:00,  3.51s/it][A100%|██████████| 1/1 [00:03<00:00,  3.51s/it]
+Running inference:  67%|██████▋   | 2/3 [00:04<00:02,  2.47s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:49:46,512 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+WARNING 01-16 08:49:46 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:49:46,827 INFO yield speech len 1.36, rtf 0.23165310130399813
+2026-01-16 08:49:47,126 INFO yield speech len 1.0, rtf 0.2983546257019043
+2026-01-16 08:49:47,428 INFO yield speech len 1.0, rtf 0.3015756607055664
+2026-01-16 08:49:47,708 INFO yield speech len 1.0, rtf 0.27983736991882324
+2026-01-16 08:49:47,981 INFO yield speech len 1.0, rtf 0.27368974685668945
+2026-01-16 08:49:48,276 INFO yield speech len 1.0, rtf 0.29427433013916016
+2026-01-16 08:49:48,494 INFO yield speech len 1.0, rtf 0.2179548740386963
+2026-01-16 08:49:48,695 INFO yield speech len 1.0, rtf 0.20059728622436523
+2026-01-16 08:49:48,895 INFO yield speech len 1.0, rtf 0.19994854927062988
+2026-01-16 08:49:49,096 INFO yield speech len 1.0, rtf 0.2006826400756836
+2026-01-16 08:49:49,404 INFO yield speech len 1.0, rtf 0.3080322742462158
+2026-01-16 08:49:49,723 INFO yield speech len 1.0, rtf 0.31949448585510254
+2026-01-16 08:49:50,023 INFO yield speech len 1.0, rtf 0.2998480796813965
+2026-01-16 08:49:50,328 INFO yield speech len 1.0, rtf 0.3043174743652344
+2026-01-16 08:49:50,526 INFO yield speech len 1.24, rtf 0.1593989710653982
+
+100%|██████████| 1/1 [00:04<00:00,  4.59s/it][A100%|██████████| 1/1 [00:04<00:00,  4.59s/it]
+Running inference: 100%|██████████| 3/3 [00:09<00:00,  3.44s/it]Running inference: 100%|██████████| 3/3 [00:09<00:00,  3.03s/it]
+
+📊 Results:
+   Mean TTFB: 0.8906s
+   Mean RTF:  0.3131
+   Memory:    3446.01 MB
+[rank0]:[W116 08:49:50.368541373 ProcessGroupNCCL.cpp:1538] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+
+================================================================================
+Testing configuration: PyTorch + FP32
+  vLLM: False, FP16: False
+================================================================================
+Loading model...
+2026-01-16 08:49:57,072 INFO input frame rate=25
+[1;31m2026-01-16 08:50:00.363628314 [E:onnxruntime:Default, provider_bridge_ort.cc:1744 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1426 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.11: cannot open shared object file: No such file or directory
+[m
+[0;93m2026-01-16 08:50:00.363652163 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:870 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Please reference https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirementsto ensure all dependencies are met.[m
+2026-01-16 08:50:01,371 INFO use wetext frontend
+[01/16/2026-08:50:05] [TRT] [I] Loaded engine size: 1270 MiB
+[01/16/2026-08:50:05] [TRT] [I] [MS] Running engine with multi stream info
+[01/16/2026-08:50:05] [TRT] [I] [MS] Number of aux streams is 1
+[01/16/2026-08:50:05] [TRT] [I] [MS] Number of total worker streams is 2
+[01/16/2026-08:50:05] [TRT] [I] [MS] The main stream provided by execute/enqueue calls is the first worker stream
+[01/16/2026-08:50:05] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +3552, now: CPU 0, GPU 4815 (MiB)
+✅ Model loaded in 11.37s
+Warming up...
+  0%|          | 0/1 [00:00<?, ?it/s]2026-01-16 08:50:05,573 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:50:06,125 INFO synthesis text 你好，我是语音合成系统。
+2026-01-16 08:50:07,100 INFO yield speech len 1.36, rtf 0.7167668903575224
+2026-01-16 08:50:07,526 INFO yield speech len 1.0, rtf 0.4260222911834717
+2026-01-16 08:50:08,005 INFO yield speech len 1.0, rtf 0.47855687141418457
+2026-01-16 08:50:08,405 INFO yield speech len 1.0, rtf 0.40029382705688477
+2026-01-16 08:50:08,805 INFO yield speech len 1.0, rtf 0.3998274803161621
+2026-01-16 08:50:09,205 INFO yield speech len 1.0, rtf 0.3994333744049072
+2026-01-16 08:50:09,685 INFO yield speech len 1.0, rtf 0.479888916015625
+2026-01-16 08:50:10,007 INFO yield speech len 0.48, rtf 0.6712133685747783
+100%|██████████| 1/1 [00:04<00:00,  4.44s/it]100%|██████████| 1/1 [00:04<00:00,  4.44s/it]
+Running inference:   0%|          | 0/3 [00:00<?, ?it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:50:10,019 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:50:10,617 INFO synthesis text 你好，我是语音合成系统。
+2026-01-16 08:50:11,413 INFO yield speech len 1.36, rtf 0.5851927925558651
+2026-01-16 08:50:11,907 INFO yield speech len 1.0, rtf 0.49400854110717773
+2026-01-16 08:50:12,300 INFO yield speech len 1.0, rtf 0.393002986907959
+2026-01-16 08:50:12,999 INFO yield speech len 1.0, rtf 0.6990790367126465
+2026-01-16 08:50:13,391 INFO yield speech len 1.0, rtf 0.39116430282592773
+2026-01-16 08:50:13,806 INFO yield speech len 1.0, rtf 0.4146902561187744
+2026-01-16 08:50:14,186 INFO yield speech len 1.0, rtf 0.3808159828186035
+2026-01-16 08:50:14,478 INFO yield speech len 0.48, rtf 0.6062661608060201
+
+100%|██████████| 1/1 [00:04<00:00,  4.46s/it][A100%|██████████| 1/1 [00:04<00:00,  4.46s/it]
+Running inference:  33%|███▎      | 1/3 [00:04<00:08,  4.46s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:50:15,135 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+2026-01-16 08:50:15,899 INFO yield speech len 1.36, rtf 0.5621382418800802
+2026-01-16 08:50:16,404 INFO yield speech len 1.0, rtf 0.5049357414245605
+2026-01-16 08:50:16,799 INFO yield speech len 1.0, rtf 0.3943049907684326
+2026-01-16 08:50:17,297 INFO yield speech len 1.0, rtf 0.49838733673095703
+2026-01-16 08:50:17,698 INFO yield speech len 1.0, rtf 0.4008309841156006
+2026-01-16 08:50:18,102 INFO yield speech len 1.0, rtf 0.4031486511230469
+2026-01-16 08:50:18,577 INFO yield speech len 1.0, rtf 0.4749875068664551
+2026-01-16 08:50:18,776 INFO yield speech len 0.48, rtf 0.41520098845163983
+
+100%|██████████| 1/1 [00:04<00:00,  4.30s/it][A100%|██████████| 1/1 [00:04<00:00,  4.30s/it]
+Running inference:  67%|██████▋   | 2/3 [00:08<00:04,  4.37s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:50:19,312 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+2026-01-16 08:50:20,115 INFO yield speech len 1.36, rtf 0.5906702841029448
+2026-01-16 08:50:20,608 INFO yield speech len 1.0, rtf 0.49266624450683594
+2026-01-16 08:50:20,999 INFO yield speech len 1.0, rtf 0.3915386199951172
+2026-01-16 08:50:21,503 INFO yield speech len 1.0, rtf 0.5032992362976074
+2026-01-16 08:50:21,902 INFO yield speech len 1.0, rtf 0.39882612228393555
+2026-01-16 08:50:22,299 INFO yield speech len 1.0, rtf 0.39662837982177734
+2026-01-16 08:50:22,775 INFO yield speech len 1.0, rtf 0.4766960144042969
+2026-01-16 08:50:22,948 INFO yield speech len 0.48, rtf 0.360122819741567
+
+100%|██████████| 1/1 [00:04<00:00,  4.19s/it][A100%|██████████| 1/1 [00:04<00:00,  4.19s/it]
+Running inference: 100%|██████████| 3/3 [00:12<00:00,  4.29s/it]Running inference: 100%|██████████| 3/3 [00:12<00:00,  4.32s/it]
+
+📊 Results:
+   Mean TTFB: 1.3835s
+   Mean RTF:  0.5509
+   Memory:    3516.33 MB
+
+================================================================================
+Testing configuration: PyTorch + FP16
+  vLLM: False, FP16: True
+================================================================================
+Loading model...
+2026-01-16 08:50:28,465 INFO input frame rate=25
+[1;31m2026-01-16 08:50:30.892364451 [E:onnxruntime:Default, provider_bridge_ort.cc:1744 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1426 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.11: cannot open shared object file: No such file or directory
+[m
+[0;93m2026-01-16 08:50:30.892388880 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:870 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Please reference https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirementsto ensure all dependencies are met.[m
+2026-01-16 08:50:31,905 INFO use wetext frontend
+2026-01-16 08:50:33,541 WARNING DiT tensorRT fp16 engine have some performance issue, use at caution!
+[01/16/2026-08:50:33] [TRT] [I] Loaded engine size: 639 MiB
+[01/16/2026-08:50:34] [TRT] [I] [MS] Running engine with multi stream info
+[01/16/2026-08:50:34] [TRT] [I] [MS] Number of aux streams is 1
+[01/16/2026-08:50:34] [TRT] [I] [MS] Number of total worker streams is 2
+[01/16/2026-08:50:34] [TRT] [I] [MS] The main stream provided by execute/enqueue calls is the first worker stream
+[01/16/2026-08:50:34] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +165, now: CPU 0, GPU 796 (MiB)
+✅ Model loaded in 8.05s
+Warming up...
+  0%|          | 0/1 [00:00<?, ?it/s]2026-01-16 08:50:34,147 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:50:34,652 INFO synthesis text 你好，我是语音合成系统。
+2026-01-16 08:50:35,579 INFO yield speech len 1.36, rtf 0.6817984230378095
+2026-01-16 08:50:36,021 INFO yield speech len 1.0, rtf 0.44173216819763184
+2026-01-16 08:50:36,430 INFO yield speech len 1.0, rtf 0.40885353088378906
+2026-01-16 08:50:37,039 INFO yield speech len 1.0, rtf 0.608544111251831
+2026-01-16 08:50:37,526 INFO yield speech len 1.0, rtf 0.48734426498413086
+2026-01-16 08:50:38,030 INFO yield speech len 1.0, rtf 0.5033309459686279
+2026-01-16 08:50:38,528 INFO yield speech len 1.0, rtf 0.49750423431396484
+2026-01-16 08:50:39,023 INFO yield speech len 1.0, rtf 0.49488139152526855
+2026-01-16 08:50:39,560 INFO yield speech len 1.24, rtf 0.4333223066022319
+100%|██████████| 1/1 [00:05<00:00,  5.43s/it]100%|██████████| 1/1 [00:05<00:00,  5.43s/it]
+Running inference:   0%|          | 0/3 [00:00<?, ?it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:50:39,581 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:50:40,209 INFO synthesis text 你好，我是语音合成系统。
+2026-01-16 08:50:41,027 INFO yield speech len 1.36, rtf 0.6012613282484166
+2026-01-16 08:50:41,524 INFO yield speech len 1.0, rtf 0.49743151664733887
+2026-01-16 08:50:42,122 INFO yield speech len 1.0, rtf 0.597691535949707
+2026-01-16 08:50:42,625 INFO yield speech len 1.0, rtf 0.5027658939361572
+2026-01-16 08:50:43,128 INFO yield speech len 1.0, rtf 0.5020756721496582
+2026-01-16 08:50:43,629 INFO yield speech len 1.0, rtf 0.5010325908660889
+2026-01-16 08:50:44,128 INFO yield speech len 1.0, rtf 0.4994502067565918
+2026-01-16 08:50:44,624 INFO yield speech len 1.0, rtf 0.49513697624206543
+2026-01-16 08:50:45,004 INFO yield speech len 1.24, rtf 0.30691508323915545
+
+100%|██████████| 1/1 [00:05<00:00,  5.43s/it][A100%|██████████| 1/1 [00:05<00:00,  5.43s/it]
+Running inference:  33%|███▎      | 1/3 [00:05<00:10,  5.43s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:50:45,708 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+2026-01-16 08:50:46,530 INFO yield speech len 1.36, rtf 0.6046077784369973
+2026-01-16 08:50:47,027 INFO yield speech len 1.0, rtf 0.49610185623168945
+2026-01-16 08:50:47,623 INFO yield speech len 1.0, rtf 0.5958364009857178
+2026-01-16 08:50:48,034 INFO yield speech len 1.0, rtf 0.41094493865966797
+2026-01-16 08:50:48,621 INFO yield speech len 1.0, rtf 0.5866518020629883
+2026-01-16 08:50:49,034 INFO yield speech len 1.0, rtf 0.413541316986084
+2026-01-16 08:50:49,519 INFO yield speech len 1.0, rtf 0.48430967330932617
+2026-01-16 08:50:50,110 INFO yield speech len 1.0, rtf 0.5912377834320068
+2026-01-16 08:50:50,612 INFO yield speech len 1.0, rtf 0.5020222663879395
+2026-01-16 08:50:51,117 INFO yield speech len 1.0, rtf 0.5047056674957275
+2026-01-16 08:50:51,621 INFO yield speech len 1.0, rtf 0.5035700798034668
+2026-01-16 08:50:52,120 INFO yield speech len 1.0, rtf 0.49926137924194336
+2026-01-16 08:50:52,612 INFO yield speech len 1.0, rtf 0.4909796714782715
+2026-01-16 08:50:53,115 INFO yield speech len 1.0, rtf 0.5031776428222656
+2026-01-16 08:50:53,649 INFO yield speech len 1.12, rtf 0.47695956059864586
+
+100%|██████████| 1/1 [00:08<00:00,  8.64s/it][A100%|██████████| 1/1 [00:08<00:00,  8.64s/it]
+Running inference:  67%|██████▋   | 2/3 [00:14<00:07,  7.32s/it]
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:50:54,268 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+2026-01-16 08:50:55,530 INFO yield speech len 1.36, rtf 0.9277098319109748
+2026-01-16 08:50:56,025 INFO yield speech len 1.0, rtf 0.49503016471862793
+2026-01-16 08:50:56,541 INFO yield speech len 1.0, rtf 0.5156161785125732
+2026-01-16 08:50:57,038 INFO yield speech len 1.0, rtf 0.49672722816467285
+2026-01-16 08:50:57,536 INFO yield speech len 1.0, rtf 0.49802136421203613
+2026-01-16 08:50:58,136 INFO yield speech len 1.0, rtf 0.5992348194122314
+2026-01-16 08:50:58,635 INFO yield speech len 1.0, rtf 0.4993152618408203
+2026-01-16 08:50:59,117 INFO yield speech len 1.0, rtf 0.48176145553588867
+2026-01-16 08:50:59,607 INFO yield speech len 1.0, rtf 0.4899563789367676
+2026-01-16 08:51:00,108 INFO yield speech len 1.0, rtf 0.4999845027923584
+2026-01-16 08:51:00,633 INFO yield speech len 1.0, rtf 0.5257642269134521
+2026-01-16 08:51:01,143 INFO yield speech len 1.0, rtf 0.5088891983032227
+2026-01-16 08:51:01,621 INFO yield speech len 1.0, rtf 0.4787883758544922
+2026-01-16 08:51:02,126 INFO yield speech len 1.0, rtf 0.5042819976806641
+2026-01-16 08:51:02,594 INFO yield speech len 1.12, rtf 0.4182066236223493
+
+100%|██████████| 1/1 [00:08<00:00,  8.96s/it][A100%|██████████| 1/1 [00:08<00:00,  8.96s/it]
+Running inference: 100%|██████████| 3/3 [00:23<00:00,  8.07s/it]Running inference: 100%|██████████| 3/3 [00:23<00:00,  7.68s/it]
+
+📊 Results:
+   Mean TTFB: 1.6118s
+   Mean RTF:  0.5679
+   Memory:    4968.36 MB
+
+
+================================================================================
+📊 QUANTIZATION COMPARISON SUMMARY
+================================================================================
+
+Configuration             TTFB (ms)    RTF        Memory (MB)     Status
+-------------------------------------------------------------------------------------
+vLLM + FP32               1005.84      0.3762     3370.44         ✅
+vLLM + FP16               890.57       0.3131     3446.01         ✅
+PyTorch + FP32            1383.46      0.5509     3516.33         ✅
+PyTorch + FP16            1611.84      0.5679     4968.36         ✅
+
+🏆 Best Configurations:
+   Lowest TTFB:  vLLM + FP16 (890.57ms)
+   Lowest RTF:   vLLM + FP16 (0.3131)
+   Lowest Memory: vLLM + FP32 (3370.44 MB)
+
+⚡ Speedup vs PyTorch FP32 baseline:
+   vLLM + FP32: 1.46x faster
+   vLLM + FP16: 1.76x faster
+   PyTorch + FP16: 0.97x faster
+
+💾 Results saved to: quantization_results.json
+
+✅ Benchmark complete!

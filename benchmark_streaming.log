@@ -1,0 +1,3169 @@
+INFO 01-16 08:42:39 [__init__.py:216] Automatically detected platform cuda.
+🚀 Starting CosyVoice3 Streaming Benchmark with vLLM
+Model: pretrained_models/Fun-CosyVoice3-0.5B
+Test texts: 7
+Concurrency levels: [1, 2, 4, 8, 16]
+
+⏳ Loading model...
+Loading model from pretrained_models/Fun-CosyVoice3-0.5B...
+2026-01-16 08:42:47,645 INFO input frame rate=25
+/usr/local/lib/python3.12/dist-packages/torch/nn/utils/weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+[1;31m2026-01-16 08:42:51.299208290 [E:onnxruntime:Default, provider_bridge_ort.cc:1744 TryGetProviderInfo_CUDA] /onnxruntime_src/onnxruntime/core/session/provider_bridge_ort.cc:1426 onnxruntime::Provider& onnxruntime::ProviderLibrary::Get() [ONNXRuntimeError] : 1 : FAIL : Failed to load library libonnxruntime_providers_cuda.so with error: libcublasLt.so.11: cannot open shared object file: No such file or directory
+[m
+[0;93m2026-01-16 08:42:51.299230669 [W:onnxruntime:Default, onnxruntime_pybind_state.cc:870 CreateExecutionProviderInstance] Failed to create CUDAExecutionProvider. Please reference https://onnxruntime.ai/docs/execution-providers/CUDA-ExecutionProvider.html#requirementsto ensure all dependencies are met.[m
+2026-01-16 08:42:52,812 INFO use wetext frontend
+INFO 01-16 08:42:55 [model.py:547] Resolved architecture: Qwen2ForCausalLM
+`torch_dtype` is deprecated! Use `dtype` instead!
+INFO 01-16 08:42:55 [model.py:1510] Using max model len 32768
+WARNING 01-16 08:42:55 [arg_utils.py:1554] --enable-prompt-embeds and --enable-prefix-caching are not supported together in V1. Prefix caching has been disabled.
+INFO 01-16 08:42:57 [scheduler.py:205] Chunked prefill is enabled with max_num_batched_tokens=2048.
+WARNING 01-16 08:42:57 [__init__.py:3036] We must use the `spawn` multiprocessing start method. Overriding VLLM_WORKER_MULTIPROC_METHOD to 'spawn'. See https://docs.vllm.ai/en/latest/usage/troubleshooting.html#python-multiprocessing for more information. Reasons: CUDA is initialized
+INFO 01-16 08:43:00 [__init__.py:216] Automatically detected platform cuda.
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:04 [core.py:644] Waiting for init message from front-end.
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:04 [core.py:77] Initializing a V1 LLM engine (v0.11.0) with config: model='pretrained_models/Fun-CosyVoice3-0.5B/vllm', speculative_config=None, tokenizer='pretrained_models/Fun-CosyVoice3-0.5B/vllm', skip_tokenizer_init=True, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=32768, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser=''), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None), seed=0, served_model_name=pretrained_models/Fun-CosyVoice3-0.5B/vllm, enable_prefix_caching=False, chunked_prefill_enabled=True, pooler_config=None, compilation_config={"level":3,"debug_dump_path":"","cache_dir":"","backend":"","custom_ops":[],"splitting_ops":["vllm.unified_attention","vllm.unified_attention_with_output","vllm.mamba_mixer2","vllm.mamba_mixer","vllm.short_conv","vllm.linear_attention","vllm.plamo2_mamba_mixer","vllm.gdn_attention","vllm.sparse_attn_indexer"],"use_inductor":true,"compile_sizes":[],"inductor_compile_config":{"enable_auto_functionalized_v2":false},"inductor_passes":{},"cudagraph_mode":[2,1],"use_cudagraph":true,"cudagraph_num_of_warmups":1,"cudagraph_capture_sizes":[256,248,240,232,224,216,208,200,192,184,176,168,160,152,144,136,128,120,112,104,96,88,80,72,64,56,48,40,32,24,16,8,4,2,1],"cudagraph_copy_inputs":false,"full_cuda_graph":false,"use_inductor_graph_partition":false,"pass_config":{},"max_capture_size":256,"local_cache_dir":null}
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:05 [parallel_state.py:1208] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, TP rank 0, EP rank 0
+[1;36m(EngineCore_DP0 pid=17427)[0;0m WARNING 01-16 08:43:05 [topk_topp_sampler.py:66] FlashInfer is not available. Falling back to the PyTorch-native implementation of top-p & top-k sampling. For the best performance, please install FlashInfer.
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:05 [gpu_model_runner.py:2602] Starting to load model pretrained_models/Fun-CosyVoice3-0.5B/vllm...
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:05 [gpu_model_runner.py:2634] Loading model from scratch...
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:05 [cuda.py:366] Using Flash Attention backend on V1 engine.
+[1;36m(EngineCore_DP0 pid=17427)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+[1;36m(EngineCore_DP0 pid=17427)[0;0m Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 10.34it/s]
+[1;36m(EngineCore_DP0 pid=17427)[0;0m 
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:06 [default_loader.py:267] Loading weights took 0.12 seconds
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:06 [gpu_model_runner.py:2653] Model loading took 0.6953 GiB and 0.272010 seconds
+[1;36m(EngineCore_DP0 pid=17427)[0;0m 2026-01-16 08:43:07,072 DEBUG Starting new HTTPS connection (1): stats.vllm.ai:443
+[1;36m(EngineCore_DP0 pid=17427)[0;0m 2026-01-16 08:43:07,235 DEBUG https://stats.vllm.ai:443 "POST / HTTP/1.1" 200 None
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:09 [backends.py:548] Using cache directory: /root/.cache/vllm/torch_compile_cache/8801fce406/rank_0_0/backbone for vLLM's torch.compile
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:09 [backends.py:559] Dynamo bytecode transform time: 2.83 s
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:10 [backends.py:164] Directly load the compiled graph(s) for dynamic shape from the cache, took 0.888 s
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:11 [monitor.py:34] torch.compile takes 2.83 s in total
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:11 [gpu_worker.py:298] Available KV cache memory: 5.42 GiB
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:12 [kv_cache_utils.py:1087] GPU KV cache size: 473,472 tokens
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:12 [kv_cache_utils.py:1091] Maximum concurrency for 32,768 tokens per request: 14.45x
+[1;36m(EngineCore_DP0 pid=17427)[0;0m Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):   0%|          | 0/35 [00:00<?, ?it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  20%|██        | 7/35 [00:00<00:00, 62.44it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  40%|████      | 14/35 [00:00<00:00, 62.35it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  63%|██████▎   | 22/35 [00:00<00:00, 67.54it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE):  86%|████████▌ | 30/35 [00:00<00:00, 70.01it/s]Capturing CUDA graphs (mixed prefill-decode, PIECEWISE): 100%|██████████| 35/35 [00:00<00:00, 64.29it/s]
+[1;36m(EngineCore_DP0 pid=17427)[0;0m Capturing CUDA graphs (decode, FULL):   0%|          | 0/19 [00:00<?, ?it/s]Capturing CUDA graphs (decode, FULL):  11%|█         | 2/19 [00:00<00:00, 18.78it/s]Capturing CUDA graphs (decode, FULL):  47%|████▋     | 9/19 [00:00<00:00, 46.82it/s]Capturing CUDA graphs (decode, FULL):  84%|████████▍ | 16/19 [00:00<00:00, 56.45it/s]Capturing CUDA graphs (decode, FULL): 100%|██████████| 19/19 [00:00<00:00, 53.20it/s]
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:13 [gpu_model_runner.py:3480] Graph capturing finished in 1 secs, took 0.32 GiB
+[1;36m(EngineCore_DP0 pid=17427)[0;0m INFO 01-16 08:43:13 [core.py:210] init engine (profile, create kv cache, warmup model) took 7.10 seconds
+INFO 01-16 08:43:13 [loggers.py:147] Engine 000: vllm cache_config_info with initialization after num_gpu_blocks is: 29592
+2026-01-16 08:43:14,090 INFO Converting onnx to trt...
+[01/16/2026-08:43:14] [TRT] [I] [MemUsageChange] Init CUDA: CPU -2, GPU +0, now: CPU 7315, GPU 11462 (MiB)
+[01/16/2026-08:43:14] [TRT] [I] [MemUsageChange] Init builder kernel library: CPU -1538, GPU +4, now: CPU 5575, GPU 11466 (MiB)
+[01/16/2026-08:43:18] [TRT] [I] ----------------------------------------------------------------
+[01/16/2026-08:43:18] [TRT] [I] ONNX IR version:  0.0.8
+[01/16/2026-08:43:18] [TRT] [I] Opset version:    18
+[01/16/2026-08:43:18] [TRT] [I] Producer name:    pytorch
+[01/16/2026-08:43:18] [TRT] [I] Producer version: 2.3.1
+[01/16/2026-08:43:18] [TRT] [I] Domain:           
+[01/16/2026-08:43:18] [TRT] [I] Model version:    0
+[01/16/2026-08:43:18] [TRT] [I] Doc string:       
+[01/16/2026-08:43:18] [TRT] [I] ----------------------------------------------------------------
+[01/16/2026-08:43:19] [TRT] [I] Local timing cache in use. Profiling results in this builder pass will not be stored.
+[01/16/2026-08:43:19] [TRT] [I] Compiler backend is used during engine build.
+[01/16/2026-08:43:47] [TRT] [I] Detected 6 inputs and 1 output network tensors.
+[01/16/2026-08:43:47] [TRT] [I] Total Host Persistent Memory: 11968 bytes
+[01/16/2026-08:43:47] [TRT] [I] Total Device Persistent Memory: 0 bytes
+[01/16/2026-08:43:47] [TRT] [I] Max Scratch Memory: 3675226112 bytes
+[01/16/2026-08:43:47] [TRT] [I] [BlockAssignment] Started assigning block shifts. This will take 18 steps to complete.
+[01/16/2026-08:43:47] [TRT] [I] [BlockAssignment] Algorithm ShiftNTopDown took 0.802923ms to assign 4 blocks to 18 nodes requiring 3724624384 bytes.
+[01/16/2026-08:43:47] [TRT] [I] Total Activation Memory: 3724623872 bytes
+[01/16/2026-08:43:48] [TRT] [I] Total Weights Memory: 1324582784 bytes
+[01/16/2026-08:43:48] [TRT] [I] Compiler backend is used during engine execution.
+[01/16/2026-08:43:48] [TRT] [I] Engine generation completed in 28.6773 seconds.
+[01/16/2026-08:43:48] [TRT] [I] [MemUsageStats] Peak memory usage of TRT CPU/GPU memory allocators: CPU 7 MiB, GPU 4800 MiB
+2026-01-16 08:43:50,873 INFO Succesfully convert onnx to trt...
+[01/16/2026-08:43:52] [TRT] [I] Loaded engine size: 1270 MiB
+[01/16/2026-08:43:52] [TRT] [I] [MS] Running engine with multi stream info
+[01/16/2026-08:43:52] [TRT] [I] [MS] Number of aux streams is 1
+[01/16/2026-08:43:52] [TRT] [I] [MS] Number of total worker streams is 2
+[01/16/2026-08:43:52] [TRT] [I] [MS] The main stream provided by execute/enqueue calls is the first worker stream
+[01/16/2026-08:43:52] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +3552, now: CPU 0, GPU 4815 (MiB)
+Model loaded successfully! Sample rate: 24000
+
+🔥 Warming up model...
+  0%|          | 0/1 [00:00<?, ?it/s]2026-01-16 08:43:52,692 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+/usr/local/lib/python3.12/dist-packages/torchaudio/_backend/utils.py:213: UserWarning: In 2.9, this function's implementation will be changed to use torchaudio.load_with_torchcodec` under the hood. Some parameters like ``normalize``, ``format``, ``buffer_size``, and ``backend`` will be ignored. We recommend that you port your code to rely directly on TorchCodec's decoder instead: https://docs.pytorch.org/torchcodec/stable/generated/torchcodec.decoders.AudioDecoder.html#torchcodec.decoders.AudioDecoder.
+  warnings.warn(
+2026-01-16 08:43:53,732 INFO synthesis text 你好，我是语音合成系统。
+/workspace/CosyVoice-tensrortllm/cosyvoice/cli/model.py:103: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with self.llm_context, torch.cuda.amp.autocast(self.fp16 is True and hasattr(self.llm, 'vllm') is False):
+WARNING 01-16 08:43:53 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+/workspace/CosyVoice-tensrortllm/cosyvoice/cli/model.py:417: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(self.fp16):
+2026-01-16 08:44:21,890 INFO yield speech len 1.36, rtf 20.70447364274193
+2026-01-16 08:44:22,007 INFO yield speech len 1.72, rtf 0.0678094320519026
+100%|██████████| 1/1 [00:29<00:00, 29.33s/it]100%|██████████| 1/1 [00:29<00:00, 29.33s/it]
+✅ Warmup complete!
+
+
+================================================================================
+🧪 Testing with concurrency: 1
+================================================================================
+Concurrency 1:   0%|          | 0/3 [00:00<?, ?it/s]
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:44:22,027 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:44:22,659 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:44:22 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:23,020 INFO yield speech len 1.36, rtf 0.26571259779088635
+2026-01-16 08:44:23,146 INFO yield speech len 1.52, rtf 0.08251541539242394
+
+100%|██████████| 1/1 [00:01<00:00,  1.12s/it][A100%|██████████| 1/1 [00:01<00:00,  1.12s/it]
+/usr/local/lib/python3.12/dist-packages/torchaudio/_backend/utils.py:337: UserWarning: In 2.9, this function's implementation will be changed to use torchaudio.save_with_torchcodec` under the hood. Some parameters like format, encoding, bits_per_sample, buffer_size, and ``backend`` will be ignored. We recommend that you port your code to rely directly on TorchCodec's encoder instead: https://docs.pytorch.org/torchcodec/stable/generated/torchcodec.encoders.AudioEncoder
+  warnings.warn(
+/usr/local/lib/python3.12/dist-packages/torchaudio/_backend/ffmpeg.py:247: UserWarning: torio.io._streaming_media_encoder.StreamingMediaEncoder has been deprecated. This deprecation is part of a large refactoring effort to transition TorchAudio into a maintenance phase. The decoding and encoding capabilities of PyTorch for both audio and video are being consolidated into TorchCodec. Please see https://github.com/pytorch/audio/issues/3902 for more information. It will be removed from the 2.9 release. 
+  s = torchaudio.io.StreamWriter(uri, format=muxer, buffer_size=buffer_size)
+
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:44:23,157 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+Concurrency 1:  33%|███▎      | 1/3 [00:01<00:02,  1.13s/it]2026-01-16 08:44:23,708 INFO synthesis text 今天天气真好。
+WARNING 01-16 08:44:23 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:24,037 INFO yield speech len 1.36, rtf 0.24232566356658933
+2026-01-16 08:44:24,140 INFO yield speech len 0.92, rtf 0.11143943537836488
+
+100%|██████████| 1/1 [00:00<00:00,  1.02it/s][A100%|██████████| 1/1 [00:00<00:00,  1.02it/s]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:44:24,141 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+Concurrency 1:  67%|██████▋   | 2/3 [00:02<00:01,  1.04s/it]2026-01-16 08:44:24,649 INFO synthesis text 欢迎使用CosyVoice。
+WARNING 01-16 08:44:24 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:24,944 INFO yield speech len 1.36, rtf 0.21722106372608857
+2026-01-16 08:44:25,057 INFO yield speech len 0.56, rtf 0.19991440432412283
+
+100%|██████████| 1/1 [00:00<00:00,  1.09it/s][A100%|██████████| 1/1 [00:00<00:00,  1.09it/s]
+Concurrency 1: 100%|██████████| 3/3 [00:03<00:00,  1.01it/s]Concurrency 1: 100%|██████████| 3/3 [00:03<00:00,  1.01s/it]
+
+================================================================================
+📊 BENCHMARK RESULTS - Concurrency: 1
+================================================================================
+Total Requests: 3 | Successful: 3 | Failed: 0
+
+⏱️  TTFB (Time To First Byte) - Lower is better:
+   Min:    0.8041s
+   Mean:   0.8931s
+   Median: 0.8806s
+   P95:    0.9832s
+   Max:    0.9946s
+
+🎵 RTF (Real-Time Factor) - Lower is better:
+   Min:    0.3891
+   Mean:   0.4327
+   Median: 0.4315
+   P95:    0.4728
+   Max:    0.4774
+
+⚡ Total Latency:
+   Min:    0.9166s
+   Mean:   1.0070s
+   Median: 0.9837s
+   P95:    1.1070s
+   Max:    1.1207s
+
+📈 Throughput (chars/sec):
+   Min:    7.12
+   Mean:   11.03
+   Max:    15.27
+
+🚀 Aggregate System Throughput: 29.44 chars/sec
+
+================================================================================
+🧪 Testing with concurrency: 2
+================================================================================
+  0%|          | 0/1 [00:00<?, ?it/s]2026-01-16 08:44:27,062 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:44:27,062 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+Concurrency 2:   0%|          | 0/6 [00:00<?, ?it/s][A[A2026-01-16 08:44:27,587 INFO synthesis text 今天天气真好。
+WARNING 01-16 08:44:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:27,596 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:44:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:27,959 INFO yield speech len 1.36, rtf 0.27347732992733226
+2026-01-16 08:44:28,118 INFO yield speech len 1.36, rtf 0.3841557923485251
+2026-01-16 08:44:28,168 INFO yield speech len 0.72, rtf 0.2899080514907837
+
+100%|██████████| 1/1 [00:01<00:00,  1.11s/it][A100%|██████████| 1/1 [00:01<00:00,  1.11s/it]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:44:28,169 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+Concurrency 2:  17%|█▋        | 1/6 [00:01<00:05,  1.11s/it][A[A2026-01-16 08:44:28,334 INFO yield speech len 1.0, rtf 0.21550893783569336
+2026-01-16 08:44:28,467 INFO yield speech len 0.84, rtf 0.15824692589896067
+100%|██████████| 1/1 [00:01<00:00,  1.41s/it]100%|██████████| 1/1 [00:01<00:00,  1.41s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]
+
+Concurrency 2:  33%|███▎      | 2/6 [00:01<00:02,  1.58it/s][A[A2026-01-16 08:44:29,046 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+WARNING 01-16 08:44:29 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:29,049 INFO synthesis text 欢迎使用CosyVoice。
+WARNING 01-16 08:44:29 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:29,597 INFO yield speech len 1.36, rtf 0.4058019203298232
+2026-01-16 08:44:29,606 INFO yield speech len 1.36, rtf 0.4097237306482651
+2026-01-16 08:44:29,794 INFO yield speech len 0.64, rtf 0.29287971556186676
+
+100%|██████████| 1/1 [00:01<00:00,  1.63s/it][A100%|██████████| 1/1 [00:01<00:00,  1.63s/it]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+
+Concurrency 2:  50%|█████     | 3/6 [00:02<00:02,  1.05it/s][A[A2026-01-16 08:44:29,891 INFO yield speech len 1.0, rtf 0.29393458366394043
+2026-01-16 08:44:30,227 INFO yield speech len 1.0, rtf 0.3357827663421631
+2026-01-16 08:44:30,343 INFO synthesis text 人工智能技术正在快速发展，语音合成是其中一个重要的应用方向。
+WARNING 01-16 08:44:30 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:30,544 INFO yield speech len 1.0, rtf 0.3168196678161621
+2026-01-16 08:44:31,042 INFO yield speech len 1.36, rtf 0.5142820232054766
+2026-01-16 08:44:31,092 INFO yield speech len 1.0, rtf 0.5478296279907227
+2026-01-16 08:44:31,289 INFO yield speech len 1.0, rtf 0.24631714820861816
+2026-01-16 08:44:31,352 INFO yield speech len 1.0, rtf 0.25971269607543945
+2026-01-16 08:44:31,590 INFO yield speech len 1.0, rtf 0.30153822898864746
+2026-01-16 08:44:31,683 INFO yield speech len 1.0, rtf 0.3312108516693115
+2026-01-16 08:44:31,834 INFO yield speech len 1.0, rtf 0.24329280853271484
+2026-01-16 08:44:31,969 INFO yield speech len 1.0, rtf 0.2854433059692383
+2026-01-16 08:44:32,126 INFO yield speech len 1.0, rtf 0.2919487953186035
+2026-01-16 08:44:32,416 INFO yield speech len 1.0, rtf 0.44663095474243164
+2026-01-16 08:44:32,444 INFO yield speech len 0.72, rtf 0.44182803895738393
+
+100%|██████████| 1/1 [00:02<00:00,  2.65s/it][A100%|██████████| 1/1 [00:02<00:00,  2.65s/it]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+
+Concurrency 2:  67%|██████▋   | 4/6 [00:05<00:03,  1.62s/it][A[A2026-01-16 08:44:32,737 INFO yield speech len 1.0, rtf 0.3209106922149658
+2026-01-16 08:44:32,973 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+WARNING 01-16 08:44:32 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+INFO 01-16 08:44:32 [loggers.py:127] Engine 000: Avg prompt throughput: 14.5 tokens/s, Avg generation throughput: 14.3 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+2026-01-16 08:44:33,249 INFO yield speech len 1.0, rtf 0.5120031833648682
+2026-01-16 08:44:33,475 INFO yield speech len 1.36, rtf 0.36947236341588635
+2026-01-16 08:44:33,730 INFO yield speech len 1.0, rtf 0.4806559085845947
+2026-01-16 08:44:33,786 INFO yield speech len 1.0, rtf 0.310610294342041
+2026-01-16 08:44:34,129 INFO yield speech len 1.04, rtf 0.3835859207006601
+100%|██████████| 1/1 [00:05<00:00,  5.67s/it]100%|██████████| 1/1 [00:05<00:00,  5.67s/it]
+
+
+Concurrency 2:  83%|████████▎ | 5/6 [00:07<00:01,  1.65s/it][A[A2026-01-16 08:44:34,228 INFO yield speech len 1.0, rtf 0.4414525032043457
+2026-01-16 08:44:34,527 INFO yield speech len 1.0, rtf 0.2989635467529297
+2026-01-16 08:44:34,887 INFO yield speech len 1.0, rtf 0.35944151878356934
+2026-01-16 08:44:35,113 INFO yield speech len 1.0, rtf 0.2259664535522461
+2026-01-16 08:44:35,406 INFO yield speech len 1.0, rtf 0.29294252395629883
+2026-01-16 08:44:35,665 INFO yield speech len 1.0, rtf 0.25896453857421875
+2026-01-16 08:44:36,004 INFO yield speech len 1.0, rtf 0.3388712406158447
+2026-01-16 08:44:36,316 INFO yield speech len 1.0, rtf 0.31202101707458496
+2026-01-16 08:44:36,735 INFO yield speech len 1.0, rtf 0.419050931930542
+2026-01-16 08:44:37,075 INFO yield speech len 1.0, rtf 0.3395822048187256
+2026-01-16 08:44:37,571 INFO yield speech len 1.0, rtf 0.49579715728759766
+2026-01-16 08:44:37,849 INFO yield speech len 1.16, rtf 0.23912294157620137
+
+100%|██████████| 1/1 [00:05<00:00,  5.40s/it][A100%|██████████| 1/1 [00:05<00:00,  5.40s/it]
+
+
+Concurrency 2: 100%|██████████| 6/6 [00:10<00:00,  2.35s/it][A[AConcurrency 2: 100%|██████████| 6/6 [00:10<00:00,  1.80s/it]
+
+================================================================================
+📊 BENCHMARK RESULTS - Concurrency: 2
+================================================================================
+Total Requests: 6 | Successful: 6 | Failed: 0
+
+⏱️  TTFB (Time To First Byte) - Lower is better:
+   Min:    0.8979s
+   Mean:   1.1325s
+   Median: 1.0939s
+   P95:    1.3887s
+   Max:    1.4372s
+
+🎵 RTF (Real-Time Factor) - Lower is better:
+   Min:    0.3722
+   Mean:   0.5030
+   Median: 0.4375
+   P95:    0.7445
+   Max:    0.8152
+
+⚡ Total Latency:
+   Min:    1.1075s
+   Mean:   2.9775s
+   Median: 2.1388s
+   P95:    5.6023s
+   Max:    5.6681s
+
+📈 Throughput (chars/sec):
+   Min:    6.32
+   Mean:   9.15
+   Max:    11.33
+
+🚀 Aggregate System Throughput: 30.70 chars/sec
+
+================================================================================
+🧪 Testing with concurrency: 4
+================================================================================
+  0%|          | 0/1 [00:00<?, ?it/s]2026-01-16 08:44:39,859 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:44:39,861 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A2026-01-16 08:44:39,861 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+Concurrency 4:   0%|          | 0/12 [00:00<?, ?it/s][A[A[A
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A2026-01-16 08:44:40,360 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:44:40 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:40,393 INFO synthesis text 欢迎使用CosyVoice。
+2026-01-16 08:44:40,393 INFO synthesis text 今天天气真好。
+2026-01-16 08:44:40,393 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+WARNING 01-16 08:44:40 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:44:40 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:44:40 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:40,999 INFO yield speech len 1.52, rtf 0.3990303528936286
+
+100%|██████████| 1/1 [00:01<00:00,  1.14s/it][A100%|██████████| 1/1 [00:01<00:00,  1.14s/it]
+
+
+
+Concurrency 4:   8%|▊         | 1/12 [00:01<00:12,  1.14s/it][A[A[A
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:44:41,066 INFO yield speech len 1.36, rtf 0.4950148217818316
+2026-01-16 08:44:41,122 INFO yield speech len 1.36, rtf 0.5601011654909919
+2026-01-16 08:44:41,125 INFO yield speech len 1.36, rtf 0.5383926279404584
+2026-01-16 08:44:41,303 INFO yield speech len 1.04, rtf 0.22815993198981652
+
+
+100%|██████████| 1/1 [00:01<00:00,  1.45s/it][A[A100%|██████████| 1/1 [00:01<00:00,  1.45s/it]
+
+
+
+Concurrency 4:  17%|█▋        | 2/12 [00:01<00:06,  1.54it/s][A[A[A
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A2026-01-16 08:44:41,413 INFO yield speech len 0.96, rtf 0.3023842970530192
+100%|██████████| 1/1 [00:01<00:00,  1.55s/it]100%|██████████| 1/1 [00:01<00:00,  1.55s/it]
+
+
+
+Concurrency 4:  25%|██▌       | 3/12 [00:01<00:03,  2.49it/s][A[A[A  0%|          | 0/1 [00:00<?, ?it/s]2026-01-16 08:44:41,513 INFO yield speech len 1.0, rtf 0.38696742057800293
+2026-01-16 08:44:41,536 INFO synthesis text 人工智能技术正在快速发展，语音合成是其中一个重要的应用方向。
+WARNING 01-16 08:44:41 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:41,815 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+WARNING 01-16 08:44:41 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:41,843 INFO yield speech len 1.0, rtf 0.33047008514404297
+2026-01-16 08:44:41,912 INFO synthesis text 在科技飞速发展的今天，深度学习和大语言模型正在改变我们的生活方式，语音合成技术也取得了突破性的进展，能够生成更加自然流畅的人声。
+WARNING 01-16 08:44:41 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:41,999 INFO yield speech len 1.36, rtf 0.340618982034571
+2026-01-16 08:44:42,134 INFO yield speech len 1.0, rtf 0.29047250747680664
+2026-01-16 08:44:42,275 INFO yield speech len 1.0, rtf 0.27530670166015625
+2026-01-16 08:44:42,726 INFO yield speech len 1.36, rtf 0.598984956741333
+2026-01-16 08:44:42,756 INFO yield speech len 1.36, rtf 0.6913977510788861
+2026-01-16 08:44:42,842 INFO yield speech len 1.0, rtf 0.7078366279602051
+2026-01-16 08:44:42,860 INFO yield speech len 1.0, rtf 0.5846993923187256
+INFO 01-16 08:44:42 [loggers.py:127] Engine 000: Avg prompt throughput: 118.0 tokens/s, Avg generation throughput: 148.1 tokens/s, Running: 2 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.2%, Prefix cache hit rate: 0.0%
+2026-01-16 08:44:43,126 INFO yield speech len 1.0, rtf 0.39937257766723633
+2026-01-16 08:44:43,219 INFO yield speech len 1.0, rtf 0.4629805088043213
+2026-01-16 08:44:43,360 INFO yield speech len 1.0, rtf 0.5183117389678955
+2026-01-16 08:44:43,367 INFO yield speech len 1.0, rtf 0.506751298904419
+2026-01-16 08:44:43,504 INFO yield speech len 1.0, rtf 0.3778083324432373
+2026-01-16 08:44:43,705 INFO yield speech len 1.0, rtf 0.48553466796875
+2026-01-16 08:44:44,076 INFO yield speech len 1.0, rtf 0.7156288623809814
+2026-01-16 08:44:44,146 INFO yield speech len 1.0, rtf 0.7790827751159668
+2026-01-16 08:44:44,172 INFO yield speech len 1.0, rtf 0.6682431697845459
+2026-01-16 08:44:44,205 INFO yield speech len 1.0, rtf 0.5002799034118652
+2026-01-16 08:44:44,726 INFO yield speech len 1.12, rtf 0.5180801664079938
+
+100%|██████████| 1/1 [00:03<00:00,  3.73s/it][A100%|██████████| 1/1 [00:03<00:00,  3.73s/it]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:44:44,736 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+Concurrency 4:  33%|███▎      | 4/12 [00:04<00:12,  1.55s/it][A[A[A2026-01-16 08:44:44,794 INFO yield speech len 1.0, rtf 0.7183411121368408
+2026-01-16 08:44:44,905 INFO yield speech len 1.0, rtf 0.7327477931976318
+2026-01-16 08:44:44,919 INFO yield speech len 1.0, rtf 0.7135865688323975
+2026-01-16 08:44:45,208 INFO yield speech len 1.0, rtf 0.4130401611328125
+2026-01-16 08:44:45,262 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:44:45 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:45,378 INFO yield speech len 1.0, rtf 0.47328805923461914
+2026-01-16 08:44:45,386 INFO yield speech len 1.0, rtf 0.4674410820007324
+2026-01-16 08:44:45,684 INFO yield speech len 1.0, rtf 0.47646546363830566
+2026-01-16 08:44:46,139 INFO yield speech len 1.0, rtf 0.760502815246582
+2026-01-16 08:44:46,182 INFO yield speech len 1.0, rtf 0.7952845096588135
+2026-01-16 08:44:46,265 INFO yield speech len 1.36, rtf 0.7375249091316671
+2026-01-16 08:44:46,351 INFO yield speech len 1.0, rtf 0.6667079925537109
+2026-01-16 08:44:46,831 INFO yield speech len 1.0, rtf 0.692152738571167
+2026-01-16 08:44:46,890 INFO yield speech len 1.16, rtf 0.5385464635388605
+
+100%|██████████| 1/1 [00:02<00:00,  2.16s/it][A100%|██████████| 1/1 [00:02<00:00,  2.16s/it]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:44:46,893 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+Concurrency 4:  42%|████▏     | 5/12 [00:07<00:12,  1.77s/it][A[A[A2026-01-16 08:44:46,930 INFO yield speech len 1.0, rtf 0.7475883960723877
+2026-01-16 08:44:46,958 INFO yield speech len 0.32, rtf 1.8954239785671234
+
+
+
+
+100%|██████████| 1/1 [00:07<00:00,  7.10s/it][A[A[A[A100%|██████████| 1/1 [00:07<00:00,  7.10s/it]
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A2026-01-16 08:44:46,960 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:44:47,289 INFO yield speech len 1.0, rtf 0.45702028274536133
+2026-01-16 08:44:47,371 INFO yield speech len 1.0, rtf 0.4409656524658203
+2026-01-16 08:44:47,417 INFO synthesis text 今天天气真好。
+WARNING 01-16 08:44:47 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:47,484 INFO synthesis text 欢迎使用CosyVoice。
+WARNING 01-16 08:44:47 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:47,758 INFO yield speech len 1.0, rtf 0.46885013580322266
+2026-01-16 08:44:47,885 INFO yield speech len 1.0, rtf 0.513962984085083
+2026-01-16 08:44:48,381 INFO yield speech len 1.36, rtf 0.7089146796394796
+2026-01-16 08:44:48,625 INFO yield speech len 1.36, rtf 0.8390291648752548
+2026-01-16 08:44:48,639 INFO yield speech len 1.0, rtf 0.8813130855560303
+2026-01-16 08:44:48,713 INFO yield speech len 1.0, rtf 0.8281304836273193
+2026-01-16 08:44:48,833 INFO yield speech len 0.8, rtf 0.5646401643753052
+
+100%|██████████| 1/1 [00:01<00:00,  1.94s/it][A100%|██████████| 1/1 [00:01<00:00,  1.94s/it]
+
+
+
+Concurrency 4:  58%|█████▊    | 7/12 [00:08<00:06,  1.37s/it][A[A[A
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:44:48,965 INFO yield speech len 1.04, rtf 0.32656238629267764
+
+
+
+
+100%|██████████| 1/1 [00:02<00:00,  2.02s/it][A[A[A[A100%|██████████| 1/1 [00:02<00:00,  2.02s/it]
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A
+
+
+Concurrency 4:  67%|██████▋   | 8/12 [00:09<00:04,  1.04s/it][A[A[A2026-01-16 08:44:49,181 INFO yield speech len 1.0, rtf 0.5417697429656982
+2026-01-16 08:44:49,249 INFO yield speech len 1.0, rtf 0.5362861156463623
+2026-01-16 08:44:49,359 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+WARNING 01-16 08:44:49 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:49,473 INFO synthesis text 人工智能技术正在快速发展，语音合成是其中一个重要的应用方向。
+WARNING 01-16 08:44:49 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:49,867 INFO yield speech len 0.76, rtf 0.9030483270946302
+100%|██████████| 1/1 [00:08<00:00,  8.46s/it]100%|██████████| 1/1 [00:08<00:00,  8.46s/it]
+
+
+
+Concurrency 4:  75%|███████▌  | 9/12 [00:10<00:02,  1.00it/s][A[A[A2026-01-16 08:44:50,070 INFO yield speech len 1.0, rtf 0.8205242156982422
+2026-01-16 08:44:50,186 INFO yield speech len 1.36, rtf 0.6079417817732866
+2026-01-16 08:44:50,790 INFO yield speech len 1.0, rtf 0.7201321125030518
+2026-01-16 08:44:50,811 INFO yield speech len 1.36, rtf 0.983590939465691
+2026-01-16 08:44:50,823 INFO yield speech len 1.0, rtf 0.6373677253723145
+2026-01-16 08:44:51,308 INFO yield speech len 1.04, rtf 0.49725564626547003
+
+
+100%|██████████| 1/1 [00:10<00:00, 10.01s/it][A[A100%|██████████| 1/1 [00:10<00:00, 10.01s/it]
+
+
+
+Concurrency 4:  83%|████████▎ | 10/12 [00:11<00:02,  1.13s/it][A[A[A2026-01-16 08:44:51,441 INFO yield speech len 1.0, rtf 0.6298158168792725
+2026-01-16 08:44:51,444 INFO yield speech len 1.0, rtf 0.6205151081085205
+2026-01-16 08:44:51,800 INFO yield speech len 1.0, rtf 0.3589963912963867
+2026-01-16 08:44:51,808 INFO yield speech len 1.0, rtf 0.3634018898010254
+2026-01-16 08:44:52,158 INFO yield speech len 1.0, rtf 0.3573932647705078
+2026-01-16 08:44:52,171 INFO yield speech len 1.0, rtf 0.3632802963256836
+2026-01-16 08:44:52,512 INFO yield speech len 1.0, rtf 0.3541250228881836
+2026-01-16 08:44:52,554 INFO yield speech len 1.0, rtf 0.38310933113098145
+2026-01-16 08:44:52,660 INFO yield speech len 0.44, rtf 0.3358537500554865
+
+
+
+
+100%|██████████| 1/1 [00:03<00:00,  3.69s/it][A[A[A[A100%|██████████| 1/1 [00:03<00:00,  3.69s/it]
+
+
+
+Concurrency 4:  92%|█████████▏| 11/12 [00:12<00:01,  1.19s/it][A[A[A2026-01-16 08:44:52,851 INFO yield speech len 1.0, rtf 0.29632997512817383
+2026-01-16 08:44:53,110 INFO yield speech len 1.0, rtf 0.25887155532836914
+2026-01-16 08:44:53,448 INFO yield speech len 1.0, rtf 0.3383181095123291
+2026-01-16 08:44:53,761 INFO yield speech len 1.0, rtf 0.3125438690185547
+2026-01-16 08:44:53,977 INFO yield speech len 0.56, rtf 0.38545089108603336
+
+100%|██████████| 1/1 [00:05<00:00,  5.14s/it][A100%|██████████| 1/1 [00:05<00:00,  5.14s/it]
+
+
+
+Concurrency 4: 100%|██████████| 12/12 [00:14<00:00,  1.23s/it][A[A[AConcurrency 4: 100%|██████████| 12/12 [00:14<00:00,  1.18s/it]
+
+================================================================================
+📊 BENCHMARK RESULTS - Concurrency: 4
+================================================================================
+Total Requests: 12 | Successful: 12 | Failed: 0
+
+⏱️  TTFB (Time To First Byte) - Lower is better:
+   Min:    0.9988s
+   Mean:   1.3751s
+   Median: 1.3309s
+   P95:    1.7418s
+   Max:    1.8351s
+
+🎵 RTF (Real-Time Factor) - Lower is better:
+   Min:    0.4708
+   Mean:   0.6838
+   Median: 0.6472
+   P95:    0.8759
+   Max:    0.9001
+
+⚡ Total Latency:
+   Min:    1.1415s
+   Mean:   4.0321s
+   Median: 2.9214s
+   P95:    9.1543s
+   Max:    10.0073s
+
+📈 Throughput (chars/sec):
+   Min:    3.60
+   Mean:   7.19
+   Max:    9.72
+
+🚀 Aggregate System Throughput: 35.07 chars/sec
+
+================================================================================
+🧪 Testing with concurrency: 8
+================================================================================
+  0%|          | 0/1 [00:00<?, ?it/s]2026-01-16 08:44:55,985 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:44:55,986 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A2026-01-16 08:44:55,988 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A2026-01-16 08:44:56,000 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+Concurrency 8:   0%|          | 0/24 [00:00<?, ?it/s][A[A[A[A[A[A[A[A2026-01-16 08:44:56,506 INFO synthesis text 今天天气真好。
+WARNING 01-16 08:44:56 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+INFO 01-16 08:44:56 [loggers.py:127] Engine 000: Avg prompt throughput: 49.0 tokens/s, Avg generation throughput: 79.3 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+2026-01-16 08:44:56,601 INFO synthesis text 你好，我是语音合成系统。
+2026-01-16 08:44:56,601 INFO synthesis text 在科技飞速发展的今天，深度学习和大语言模型正在改变我们的生活方式，语音合成技术也取得了突破性的进展，能够生成更加自然流畅的人声。
+2026-01-16 08:44:56,602 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+2026-01-16 08:44:56,603 INFO synthesis text 欢迎使用CosyVoice。
+2026-01-16 08:44:56,606 INFO synthesis text 人工智能技术正在快速发展，语音合成是其中一个重要的应用方向。
+2026-01-16 08:44:56,611 INFO synthesis text 你好，我是语音合成系统。
+2026-01-16 08:44:56,613 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+WARNING 01-16 08:44:56 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:44:56 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:44:56 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:44:56 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:44:56 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:44:56 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:44:56 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:57,398 INFO yield speech len 1.36, rtf 0.6561477394664988
+2026-01-16 08:44:57,650 INFO yield speech len 1.36, rtf 0.7702091160942526
+2026-01-16 08:44:57,751 INFO yield speech len 1.36, rtf 0.841676487642176
+2026-01-16 08:44:57,848 INFO yield speech len 1.36, rtf 0.9100223288816564
+2026-01-16 08:44:57,901 INFO yield speech len 1.36, rtf 0.9468508117339189
+2026-01-16 08:44:58,020 INFO yield speech len 1.36, rtf 1.0434853679993572
+2026-01-16 08:44:58,027 INFO yield speech len 1.36, rtf 1.0485265184851253
+2026-01-16 08:44:58,057 INFO yield speech len 1.36, rtf 1.069376223227557
+2026-01-16 08:44:58,087 INFO yield speech len 0.32, rtf 2.150990068912506
+
+100%|██████████| 1/1 [00:02<00:00,  2.10s/it][A100%|██████████| 1/1 [00:02<00:00,  2.11s/it]
+
+
+
+
+
+
+
+
+Concurrency 8:   4%|▍         | 1/24 [00:02<00:48,  2.09s/it][A[A[A[A[A[A[A[A
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:44:58,095 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:44:58,154 INFO yield speech len 1.0, rtf 0.5033552646636963
+2026-01-16 08:44:58,366 INFO yield speech len 1.4, rtf 0.36986282893589567
+100%|██████████| 1/1 [00:02<00:00,  2.38s/it]100%|██████████| 1/1 [00:02<00:00,  2.38s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]2026-01-16 08:44:58,370 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+Concurrency 8:   8%|▊         | 2/24 [00:02<00:22,  1.02s/it][A[A[A[A[A[A[A[A2026-01-16 08:44:58,374 INFO yield speech len 1.0, rtf 0.6226575374603271
+2026-01-16 08:44:58,606 INFO synthesis text 今天天气真好。
+WARNING 01-16 08:44:58 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:58,718 INFO yield speech len 1.0, rtf 0.8166613578796387
+2026-01-16 08:44:58,876 INFO yield speech len 1.56, rtf 0.5485458251757499
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:02<00:00,  2.88s/it][A[A[A[A[A[A[A100%|██████████| 1/1 [00:02<00:00,  2.88s/it]
+
+
+
+
+
+
+
+
+Concurrency 8:  12%|█▎        | 3/24 [00:02<00:16,  1.27it/s][A[A[A[A[A[A[A[A
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A2026-01-16 08:44:58,893 INFO yield speech len 1.24, rtf 0.6738872297348515
+
+
+100%|██████████| 1/1 [00:02<00:00,  2.91s/it][A[A100%|██████████| 1/1 [00:02<00:00,  2.91s/it]
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A2026-01-16 08:44:58,903 INFO synthesis text 欢迎使用CosyVoice。
+WARNING 01-16 08:44:58 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:59,023 INFO yield speech len 1.0, rtf 0.9952466487884521
+2026-01-16 08:44:59,043 INFO yield speech len 1.0, rtf 0.8889846801757812
+2026-01-16 08:44:59,099 INFO yield speech len 1.0, rtf 0.7247774600982666
+2026-01-16 08:44:59,148 INFO yield speech len 1.0, rtf 0.42975306510925293
+2026-01-16 08:44:59,450 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+WARNING 01-16 08:44:59 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:59,491 INFO synthesis text 人工智能技术正在快速发展，语音合成是其中一个重要的应用方向。
+WARNING 01-16 08:44:59 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:44:59,614 INFO yield speech len 1.36, rtf 0.7405039142159854
+2026-01-16 08:44:59,776 INFO yield speech len 1.0, rtf 0.7532985210418701
+2026-01-16 08:44:59,863 INFO yield speech len 1.0, rtf 0.8203508853912354
+2026-01-16 08:45:00,018 INFO yield speech len 1.0, rtf 0.9183580875396729
+2026-01-16 08:45:00,025 INFO yield speech len 1.36, rtf 0.8248997085234697
+2026-01-16 08:45:00,065 INFO yield speech len 1.0, rtf 0.9166069030761719
+2026-01-16 08:45:00,077 INFO yield speech len 0.8, rtf 0.5786001682281494
+
+100%|██████████| 1/1 [00:01<00:00,  1.99s/it][A100%|██████████| 1/1 [00:01<00:00,  1.99s/it]
+
+  0%|          | 0/1 [00:00<?, ?it/s][A
+
+
+
+
+
+
+
+Concurrency 8:  21%|██        | 5/24 [00:04<00:12,  1.46it/s][A[A[A[A[A[A[A[A2026-01-16 08:45:00,453 INFO yield speech len 1.0, rtf 0.6765689849853516
+2026-01-16 08:45:00,544 INFO yield speech len 1.36, rtf 0.7743749548407162
+2026-01-16 08:45:00,603 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+WARNING 01-16 08:45:00 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:00,701 INFO yield speech len 1.36, rtf 0.9203199078054989
+2026-01-16 08:45:00,795 INFO yield speech len 1.0, rtf 0.9316635131835938
+2026-01-16 08:45:00,879 INFO yield speech len 0.92, rtf 0.9282695210498312
+100%|██████████| 1/1 [00:02<00:00,  2.52s/it]100%|██████████| 1/1 [00:02<00:00,  2.52s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+Concurrency 8:  25%|██▌       | 6/24 [00:04<00:12,  1.39it/s][A[A[A[A[A[A[A[A2026-01-16 08:45:01,032 INFO yield speech len 1.0, rtf 1.0134222507476807
+2026-01-16 08:45:01,082 INFO yield speech len 1.0, rtf 1.0168428421020508
+2026-01-16 08:45:01,342 INFO yield speech len 1.0, rtf 0.8888330459594727
+2026-01-16 08:45:01,405 INFO synthesis text 在科技飞速发展的今天，深度学习和大语言模型正在改变我们的生活方式，语音合成技术也取得了突破性的进展，能够生成更加自然流畅的人声。
+WARNING 01-16 08:45:01 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:01,467 INFO yield speech len 1.0, rtf 0.922468900680542
+2026-01-16 08:45:01,582 INFO yield speech len 1.0, rtf 0.8801980018615723
+2026-01-16 08:45:01,654 INFO yield speech len 1.0, rtf 0.8580732345581055
+2026-01-16 08:45:01,774 INFO yield speech len 1.36, rtf 0.8611240807701559
+2026-01-16 08:45:01,829 INFO yield speech len 0.4, rtf 1.992620825767517
+
+
+
+
+100%|██████████| 1/1 [00:05<00:00,  5.84s/it][A[A[A[A100%|██████████| 1/1 [00:05<00:00,  5.84s/it]
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A2026-01-16 08:45:01,834 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+Concurrency 8:  29%|██▉       | 7/24 [00:05<00:13,  1.28it/s][A[A[A[A[A[A[A[A2026-01-16 08:45:01,922 INFO yield speech len 1.0, rtf 0.8394980430603027
+2026-01-16 08:45:02,136 INFO yield speech len 1.0, rtf 0.7933468818664551
+2026-01-16 08:45:02,339 INFO yield speech len 1.0, rtf 0.8717465400695801
+2026-01-16 08:45:02,352 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:45:02 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:02,486 INFO yield speech len 1.0, rtf 0.9034309387207031
+2026-01-16 08:45:02,620 INFO yield speech len 1.0, rtf 0.9658021926879883
+2026-01-16 08:45:02,764 INFO yield speech len 1.0, rtf 0.9901115894317627
+2026-01-16 08:45:02,787 INFO yield speech len 1.36, rtf 1.0160177946090698
+2026-01-16 08:45:02,961 INFO yield speech len 1.0, rtf 1.0387928485870361
+2026-01-16 08:45:03,134 INFO yield speech len 1.0, rtf 0.9974784851074219
+2026-01-16 08:45:03,371 INFO yield speech len 1.0, rtf 1.0325202941894531
+2026-01-16 08:45:03,516 INFO yield speech len 1.0, rtf 1.0304250717163086
+2026-01-16 08:45:03,692 INFO yield speech len 1.0, rtf 1.07228422164917
+2026-01-16 08:45:03,857 INFO yield speech len 1.36, rtf 1.1064853738336002
+2026-01-16 08:45:03,917 INFO yield speech len 1.0, rtf 1.1523170471191406
+2026-01-16 08:45:03,938 INFO yield speech len 1.0, rtf 1.1513514518737793
+2026-01-16 08:45:04,119 INFO yield speech len 1.0, rtf 1.1584985256195068
+2026-01-16 08:45:04,280 INFO yield speech len 1.0, rtf 1.146000862121582
+2026-01-16 08:45:04,586 INFO yield speech len 1.0, rtf 1.214155912399292
+2026-01-16 08:45:04,799 INFO yield speech len 1.0, rtf 1.2820894718170166
+2026-01-16 08:45:04,966 INFO yield speech len 1.0, rtf 1.2734060287475586
+2026-01-16 08:45:05,049 INFO yield speech len 1.24, rtf 0.9610945178616431
+
+
+
+
+100%|██████████| 1/1 [00:03<00:00,  3.22s/it][A[A[A[A100%|██████████| 1/1 [00:03<00:00,  3.22s/it]
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A2026-01-16 08:45:05,053 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+Concurrency 8:  33%|███▎      | 8/24 [00:09<00:23,  1.50s/it][A[A[A[A[A[A[A[A2026-01-16 08:45:05,157 INFO yield speech len 1.0, rtf 1.2398757934570312
+2026-01-16 08:45:05,229 INFO yield speech len 1.0, rtf 1.290513277053833
+2026-01-16 08:45:05,323 INFO yield speech len 1.0, rtf 1.2038123607635498
+2026-01-16 08:45:05,456 INFO yield speech len 1.0, rtf 1.176647424697876
+2026-01-16 08:45:05,593 INFO yield speech len 0.32, rtf 3.147915005683899
+
+
+100%|██████████| 1/1 [00:06<00:00,  6.69s/it][A[A100%|██████████| 1/1 [00:06<00:00,  6.69s/it]
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A2026-01-16 08:45:05,595 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+Concurrency 8:  38%|███▊      | 9/24 [00:09<00:18,  1.22s/it][A[A[A[A[A[A[A[A2026-01-16 08:45:05,599 INFO synthesis text 今天天气真好。
+WARNING 01-16 08:45:05 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:05,804 INFO yield speech len 1.0, rtf 1.0056042671203613
+2026-01-16 08:45:05,984 INFO yield speech len 1.0, rtf 1.0180091857910156
+2026-01-16 08:45:06,096 INFO synthesis text 欢迎使用CosyVoice。
+WARNING 01-16 08:45:06 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:06,184 INFO yield speech len 1.0, rtf 1.0266849994659424
+2026-01-16 08:45:06,342 INFO yield speech len 1.0, rtf 1.1130192279815674
+2026-01-16 08:45:06,484 INFO yield speech len 1.0, rtf 1.1608359813690186
+INFO 01-16 08:45:06 [loggers.py:127] Engine 000: Avg prompt throughput: 237.6 tokens/s, Avg generation throughput: 304.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+2026-01-16 08:45:06,672 INFO yield speech len 1.0, rtf 1.2157163619995117
+2026-01-16 08:45:07,071 INFO yield speech len 1.0, rtf 1.2662904262542725
+2026-01-16 08:45:07,244 INFO yield speech len 1.36, rtf 1.2096806484110214
+2026-01-16 08:45:07,256 INFO yield speech len 0.8, rtf 1.5894076228141785
+
+
+
+100%|██████████| 1/1 [00:11<00:00, 11.27s/it][A[A[A100%|██████████| 1/1 [00:11<00:00, 11.27s/it]
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A
+
+
+
+
+
+
+
+Concurrency 8:  42%|████▏     | 10/24 [00:11<00:18,  1.35s/it][A[A[A[A[A[A[A[A2026-01-16 08:45:07,448 INFO yield speech len 1.0, rtf 1.263582468032837
+2026-01-16 08:45:07,623 INFO yield speech len 1.0, rtf 1.2802815437316895
+2026-01-16 08:45:07,795 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+WARNING 01-16 08:45:07 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:07,838 INFO yield speech len 1.0, rtf 1.3536579608917236
+2026-01-16 08:45:07,916 INFO yield speech len 1.36, rtf 1.337911100948558
+2026-01-16 08:45:07,984 INFO yield speech len 1.0, rtf 1.311448097229004
+2026-01-16 08:45:08,259 INFO yield speech len 1.0, rtf 1.1877350807189941
+2026-01-16 08:45:08,326 INFO yield speech len 0.32, rtf 3.378629684448242
+
+
+
+
+100%|██████████| 1/1 [00:03<00:00,  3.29s/it][A[A[A[A100%|██████████| 1/1 [00:03<00:00,  3.29s/it]
+
+
+
+
+
+
+
+
+Concurrency 8:  46%|████▌     | 11/24 [00:12<00:16,  1.27s/it][A[A[A[A[A[A[A[A
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A2026-01-16 08:45:08,633 INFO yield speech len 1.0, rtf 1.185762643814087
+2026-01-16 08:45:08,769 INFO yield speech len 1.0, rtf 1.146430492401123
+2026-01-16 08:45:08,983 INFO yield speech len 1.16, rtf 0.9196980246182146
+
+
+100%|██████████| 1/1 [00:03<00:00,  3.39s/it][A[A100%|██████████| 1/1 [00:03<00:00,  3.39s/it]
+
+
+
+
+
+
+
+
+Concurrency 8:  50%|█████     | 12/24 [00:12<00:12,  1.08s/it][A[A[A[A[A[A[A[A
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A2026-01-16 08:45:09,116 INFO yield speech len 1.0, rtf 1.2779443264007568
+2026-01-16 08:45:09,271 INFO yield speech len 1.0, rtf 1.2866401672363281
+2026-01-16 08:45:09,590 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+2026-01-16 08:45:09,592 INFO synthesis text 人工智能技术正在快速发展，语音合成是其中一个重要的应用方向。
+WARNING 01-16 08:45:09 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:45:09 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:09,696 INFO yield speech len 1.0, rtf 1.4375813007354736
+2026-01-16 08:45:09,715 INFO yield speech len 1.36, rtf 1.4115010990816004
+2026-01-16 08:45:10,009 INFO yield speech len 1.0, rtf 1.3753559589385986
+2026-01-16 08:45:10,200 INFO yield speech len 1.0, rtf 1.4299814701080322
+2026-01-16 08:45:10,640 INFO yield speech len 1.0, rtf 1.5236265659332275
+2026-01-16 08:45:10,729 INFO yield speech len 0.64, rtf 2.2788316011428833
+
+
+
+
+
+100%|██████████| 1/1 [00:14<00:00, 14.75s/it][A[A[A[A[A100%|██████████| 1/1 [00:14<00:00, 14.75s/it]
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A
+
+
+
+
+
+
+
+Concurrency 8:  54%|█████▍    | 13/24 [00:14<00:14,  1.29s/it][A[A[A[A[A[A[A[A2026-01-16 08:45:11,152 INFO yield speech len 1.0, rtf 1.4368557929992676
+2026-01-16 08:45:11,169 INFO yield speech len 1.0, rtf 1.4720566272735596
+2026-01-16 08:45:11,249 INFO synthesis text 在科技飞速发展的今天，深度学习和大语言模型正在改变我们的生活方式，语音合成技术也取得了突破性的进展，能够生成更加自然流畅的人声。
+WARNING 01-16 08:45:11 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:11,447 INFO yield speech len 1.0, rtf 1.4377975463867188
+2026-01-16 08:45:11,579 INFO yield speech len 1.36, rtf 1.460826046326581
+2026-01-16 08:45:11,604 INFO yield speech len 1.0, rtf 1.4047534465789795
+2026-01-16 08:45:11,637 INFO yield speech len 1.36, rtf 1.5049923868740305
+2026-01-16 08:45:12,016 INFO yield speech len 1.0, rtf 1.3756928443908691
+2026-01-16 08:45:12,620 INFO yield speech len 1.0, rtf 1.4681355953216553
+2026-01-16 08:45:12,765 INFO yield speech len 1.0, rtf 1.596773386001587
+2026-01-16 08:45:13,103 INFO yield speech len 1.0, rtf 1.656022071838379
+2026-01-16 08:45:13,292 INFO yield speech len 1.0, rtf 1.7122440338134766
+2026-01-16 08:45:13,349 INFO yield speech len 1.0, rtf 1.7445435523986816
+2026-01-16 08:45:13,463 INFO yield speech len 1.0, rtf 1.8266818523406982
+2026-01-16 08:45:13,468 INFO yield speech len 1.36, rtf 1.6320638796862432
+2026-01-16 08:45:13,959 INFO yield speech len 1.0, rtf 1.9431047439575195
+2026-01-16 08:45:14,421 INFO yield speech len 1.0, rtf 1.8004848957061768
+2026-01-16 08:45:14,556 INFO yield speech len 0.8, rtf 2.2373980283737183
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:15<00:00, 15.68s/it][A[A[A[A[A[A[A100%|██████████| 1/1 [00:15<00:00, 15.68s/it]
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A2026-01-16 08:45:14,561 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+Concurrency 8:  58%|█████▊    | 14/24 [00:18<00:20,  2.04s/it][A[A[A[A[A[A[A[A2026-01-16 08:45:14,867 INFO yield speech len 1.0, rtf 1.7638237476348877
+2026-01-16 08:45:14,949 INFO yield speech len 1.0, rtf 1.656867265701294
+2026-01-16 08:45:15,078 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:45:15 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:15,101 INFO yield speech len 1.0, rtf 1.6376748085021973
+2026-01-16 08:45:15,115 INFO yield speech len 1.0, rtf 1.7652702331542969
+2026-01-16 08:45:15,129 INFO yield speech len 1.0, rtf 1.6605327129364014
+2026-01-16 08:45:15,288 INFO yield speech len 0.36, rtf 3.689985142813789
+
+
+
+
+
+
+100%|██████████| 1/1 [00:19<00:00, 19.30s/it][A[A[A[A[A[A100%|██████████| 1/1 [00:19<00:00, 19.30s/it]
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A2026-01-16 08:45:15,298 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+Concurrency 8:  62%|██████▎   | 15/24 [00:19<00:14,  1.65s/it][A[A[A[A[A[A[A[A2026-01-16 08:45:15,540 INFO yield speech len 1.0, rtf 1.1186814308166504
+2026-01-16 08:45:15,802 INFO synthesis text 今天天气真好。
+WARNING 01-16 08:45:15 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:16,046 INFO yield speech len 1.0, rtf 1.1787223815917969
+2026-01-16 08:45:16,161 INFO yield speech len 1.0, rtf 1.2119200229644775
+2026-01-16 08:45:16,321 INFO yield speech len 1.0, rtf 1.2191765308380127
+2026-01-16 08:45:16,443 INFO yield speech len 1.0, rtf 1.3136012554168701
+2026-01-16 08:45:16,458 INFO yield speech len 1.0, rtf 1.3428356647491455
+2026-01-16 08:45:16,679 INFO yield speech len 1.36, rtf 1.1771410703659058
+2026-01-16 08:45:16,762 INFO yield speech len 1.0, rtf 1.2221763134002686
+2026-01-16 08:45:17,429 INFO yield speech len 1.36, rtf 1.1961391743491676
+2026-01-16 08:45:17,451 INFO yield speech len 1.0, rtf 1.4048988819122314
+2026-01-16 08:45:17,454 INFO yield speech len 1.0, rtf 1.2929191589355469
+2026-01-16 08:45:17,530 INFO yield speech len 1.0, rtf 1.2093262672424316
+2026-01-16 08:45:17,591 INFO yield speech len 1.0, rtf 1.147850513458252
+2026-01-16 08:45:17,671 INFO yield speech len 1.0, rtf 1.2127571105957031
+2026-01-16 08:45:17,765 INFO yield speech len 1.24, rtf 0.875480136563701
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:03<00:00,  3.21s/it][A[A[A[A[A[A[A100%|██████████| 1/1 [00:03<00:00,  3.21s/it]
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A2026-01-16 08:45:17,770 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+Concurrency 8:  67%|██████▋   | 16/24 [00:21<00:15,  1.90s/it][A[A[A[A[A[A[A[A2026-01-16 08:45:17,917 INFO yield speech len 1.0, rtf 1.1544342041015625
+2026-01-16 08:45:18,284 INFO synthesis text 欢迎使用CosyVoice。
+WARNING 01-16 08:45:18 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+INFO 01-16 08:45:18 [loggers.py:127] Engine 000: Avg prompt throughput: 75.6 tokens/s, Avg generation throughput: 124.1 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+2026-01-16 08:45:18,544 INFO yield speech len 0.52, rtf 2.143308291068444
+
+
+
+
+
+
+100%|██████████| 1/1 [00:03<00:00,  3.25s/it][A[A[A[A[A[A100%|██████████| 1/1 [00:03<00:00,  3.25s/it]
+
+
+
+
+
+
+
+
+Concurrency 8:  71%|███████   | 17/24 [00:22<00:10,  1.56s/it][A[A[A[A[A[A[A[A2026-01-16 08:45:18,599 INFO yield speech len 0.76, rtf 1.5098063569319875
+
+100%|██████████| 1/1 [00:18<00:00, 18.52s/it][A100%|██████████| 1/1 [00:18<00:00, 18.52s/it]
+2026-01-16 08:45:18,623 INFO yield speech len 0.64, rtf 1.8266819417476654
+
+
+
+
+100%|██████████| 1/1 [00:10<00:00, 10.28s/it][A[A[A[A100%|██████████| 1/1 [00:10<00:00, 10.28s/it]
+2026-01-16 08:45:18,810 INFO yield speech len 1.0, rtf 1.2798848152160645
+2026-01-16 08:45:18,828 INFO yield speech len 0.64, rtf 1.8088508397340775
+100%|██████████| 1/1 [00:17<00:00, 17.94s/it]100%|██████████| 1/1 [00:17<00:00, 17.94s/it]
+
+
+
+
+
+
+
+
+Concurrency 8:  83%|████████▎ | 20/24 [00:22<00:02,  1.36it/s][A[A[A[A[A[A[A[A2026-01-16 08:45:18,832 INFO yield speech len 1.0, rtf 1.2411634922027588
+2026-01-16 08:45:18,857 INFO yield speech len 1.0, rtf 0.9402000904083252
+2026-01-16 08:45:18,932 INFO yield speech len 1.36, rtf 0.4760568632799036
+2026-01-16 08:45:19,459 INFO yield speech len 1.0, rtf 0.6478180885314941
+2026-01-16 08:45:19,485 INFO yield speech len 0.68, rtf 0.8133190519669476
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:01<00:00,  1.72s/it][A[A[A[A[A[A[A100%|██████████| 1/1 [00:01<00:00,  1.72s/it]
+
+
+
+
+
+
+
+
+Concurrency 8:  88%|████████▊ | 21/24 [00:23<00:02,  1.39it/s][A[A[A[A[A[A[A[A2026-01-16 08:45:19,509 INFO yield speech len 1.0, rtf 0.6764476299285889
+2026-01-16 08:45:19,512 INFO yield speech len 1.0, rtf 0.6547343730926514
+2026-01-16 08:45:19,880 INFO yield speech len 0.92, rtf 0.40015189544014307
+
+
+
+100%|██████████| 1/1 [00:12<00:00, 12.62s/it][A[A[A100%|██████████| 1/1 [00:12<00:00, 12.62s/it]
+
+
+
+
+
+
+
+
+Concurrency 8:  92%|█████████▏| 22/24 [00:23<00:01,  1.55it/s][A[A[A[A[A[A[A[A2026-01-16 08:45:20,016 INFO yield speech len 1.0, rtf 0.5073938369750977
+2026-01-16 08:45:20,019 INFO yield speech len 1.0, rtf 0.5602970123291016
+2026-01-16 08:45:20,476 INFO yield speech len 1.0, rtf 0.4599580764770508
+2026-01-16 08:45:20,496 INFO yield speech len 1.0, rtf 0.47629737854003906
+2026-01-16 08:45:20,957 INFO yield speech len 1.0, rtf 0.4807922840118408
+2026-01-16 08:45:21,000 INFO yield speech len 1.0, rtf 0.5044455528259277
+2026-01-16 08:45:21,486 INFO yield speech len 1.0, rtf 0.5284280776977539
+2026-01-16 08:45:21,547 INFO yield speech len 1.0, rtf 0.5465362071990967
+2026-01-16 08:45:22,044 INFO yield speech len 1.0, rtf 0.5580770969390869
+2026-01-16 08:45:22,101 INFO yield speech len 1.0, rtf 0.5533506870269775
+2026-01-16 08:45:22,624 INFO yield speech len 1.0, rtf 0.5794456005096436
+2026-01-16 08:45:22,771 INFO yield speech len 1.0, rtf 0.6707987785339355
+2026-01-16 08:45:22,950 INFO yield speech len 0.64, rtf 0.5089711397886276
+
+
+
+
+
+100%|██████████| 1/1 [00:12<00:00, 12.22s/it][A[A[A[A[A100%|██████████| 1/1 [00:12<00:00, 12.22s/it]
+
+
+
+
+
+
+
+
+Concurrency 8:  96%|█████████▌| 23/24 [00:26<00:01,  1.25s/it][A[A[A[A[A[A[A[A2026-01-16 08:45:23,172 INFO yield speech len 1.0, rtf 0.4007301330566406
+2026-01-16 08:45:23,730 INFO yield speech len 1.0, rtf 0.5579206943511963
+2026-01-16 08:45:24,138 INFO yield speech len 1.0, rtf 0.407318115234375
+2026-01-16 08:45:24,449 INFO yield speech len 0.56, rtf 0.5552849599293299
+
+
+100%|██████████| 1/1 [00:15<00:00, 15.47s/it][A[A100%|██████████| 1/1 [00:15<00:00, 15.47s/it]
+
+
+
+
+
+
+
+
+Concurrency 8: 100%|██████████| 24/24 [00:28<00:00,  1.31s/it][A[A[A[A[A[A[A[AConcurrency 8: 100%|██████████| 24/24 [00:28<00:00,  1.19s/it]
+
+================================================================================
+📊 BENCHMARK RESULTS - Concurrency: 8
+================================================================================
+Total Requests: 24 | Successful: 24 | Failed: 0
+
+⏱️  TTFB (Time To First Byte) - Lower is better:
+   Min:    1.1629s
+   Mean:   1.9999s
+   Median: 1.9673s
+   P95:    2.7122s
+   Max:    3.2360s
+
+🎵 RTF (Real-Time Factor) - Lower is better:
+   Min:    0.8419
+   Mean:   1.2061
+   Median: 1.2034
+   P95:    1.7270
+   Max:    1.9589
+
+⚡ Total Latency:
+   Min:    1.7174s
+   Mean:   8.0622s
+   Median: 4.6175s
+   P95:    18.4349s
+   Max:    19.3072s
+
+📈 Throughput (chars/sec):
+   Min:    2.13
+   Mean:   4.09
+   Max:    8.15
+
+🚀 Aggregate System Throughput: 38.69 chars/sec
+
+================================================================================
+🧪 Testing with concurrency: 16
+================================================================================
+  0%|          | 0/1 [00:00<?, ?it/s]2026-01-16 08:45:26,459 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:45:26,461 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A2026-01-16 08:45:26,463 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A2026-01-16 08:45:26,478 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A2026-01-16 08:45:26,479 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A2026-01-16 08:45:26,480 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:26,486 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:26,487 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:   0%|          | 0/48 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:27,284 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:27,300 INFO synthesis text 今天天气真好。
+2026-01-16 08:45:27,373 INFO synthesis text 人工智能技术正在快速发展，语音合成是其中一个重要的应用方向。
+2026-01-16 08:45:27,378 INFO synthesis text 在科技飞速发展的今天，深度学习和大语言模型正在改变我们的生活方式，语音合成技术也取得了突破性的进展，能够生成更加自然流畅的人声。
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:27,392 INFO synthesis text 人工智能技术正在快速发展，语音合成是其中一个重要的应用方向。
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:27,403 INFO synthesis text 今天天气真好。
+2026-01-16 08:45:27,474 INFO synthesis text 欢迎使用CosyVoice。
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:27,499 INFO synthesis text 欢迎使用CosyVoice。
+2026-01-16 08:45:27,574 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:27,676 INFO synthesis text 你好，我是语音合成系统。
+2026-01-16 08:45:27,678 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:27,692 INFO synthesis text 今天天气真好。
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:27,790 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:27,799 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:27,882 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:27,893 INFO synthesis text 在科技飞速发展的今天，深度学习和大语言模型正在改变我们的生活方式，语音合成技术也取得了突破性的进展，能够生成更加自然流畅的人声。
+WARNING 01-16 08:45:27 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+INFO 01-16 08:45:28 [loggers.py:127] Engine 000: Avg prompt throughput: 237.6 tokens/s, Avg generation throughput: 138.9 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.4%, Prefix cache hit rate: 0.0%
+2026-01-16 08:45:29,617 INFO yield speech len 1.36, rtf 1.7037328551797304
+2026-01-16 08:45:30,311 INFO yield speech len 1.36, rtf 2.067716507350697
+2026-01-16 08:45:30,396 INFO yield speech len 1.36, rtf 2.074744245585273
+2026-01-16 08:45:30,444 INFO yield speech len 1.36, rtf 1.9448928973254034
+2026-01-16 08:45:30,456 INFO yield speech len 1.36, rtf 2.2443941410850075
+2026-01-16 08:45:30,481 INFO yield speech len 1.36, rtf 2.210806047215181
+2026-01-16 08:45:30,504 INFO yield speech len 1.36, rtf 2.0794211065067962
+2026-01-16 08:45:30,544 INFO yield speech len 1.36, rtf 2.3280541686450733
+2026-01-16 08:45:30,559 INFO yield speech len 1.36, rtf 2.1184863413081447
+2026-01-16 08:45:30,574 INFO yield speech len 1.36, rtf 2.3394668803495517
+2026-01-16 08:45:30,575 INFO yield speech len 1.36, rtf 2.1198223618900074
+2026-01-16 08:45:30,591 INFO yield speech len 1.36, rtf 1.9922161803526035
+2026-01-16 08:45:30,594 INFO yield speech len 1.36, rtf 2.0613947335411518
+2026-01-16 08:45:30,594 INFO yield speech len 1.36, rtf 2.3686354651170616
+2026-01-16 08:45:30,595 INFO yield speech len 1.36, rtf 2.434764890109791
+2026-01-16 08:45:30,601 INFO yield speech len 1.36, rtf 1.9909304731032427
+2026-01-16 08:45:30,620 INFO yield speech len 1.0, rtf 1.0016429424285889
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:04<00:00,  4.15s/it][A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:04<00:00,  4.15s/it]
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A2026-01-16 08:45:30,631 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:   2%|▏         | 1/48 [00:04<03:14,  4.14s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:30,747 INFO yield speech len 0.6, rtf 0.7263668378194174
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:04<00:00,  4.27s/it][A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:04<00:00,  4.27s/it]
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:   4%|▍         | 2/48 [00:04<01:21,  1.78s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:31,083 INFO yield speech len 1.44, rtf 0.47686944405237836
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:04<00:00,  4.60s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:04<00:00,  4.60s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:   6%|▋         | 3/48 [00:04<00:50,  1.12s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:31,340 INFO yield speech len 0.48, rtf 1.8407846490542095
+
+100%|██████████| 1/1 [00:04<00:00,  4.88s/it][A100%|██████████| 1/1 [00:04<00:00,  4.88s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:   8%|▊         | 4/48 [00:04<00:34,  1.28it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+  0%|          | 0/1 [00:00<?, ?it/s][A2026-01-16 08:45:31,537 INFO yield speech len 1.48, rtf 0.6978402266631255
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:05<00:00,  5.06s/it][A[A[A[A[A[A[A100%|██████████| 1/1 [00:05<00:00,  5.06s/it]
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  10%|█         | 5/48 [00:05<00:24,  1.76it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:31,544 INFO yield speech len 0.6, rtf 1.7703513304392497
+
+
+100%|██████████| 1/1 [00:05<00:00,  5.09s/it][A[A100%|██████████| 1/1 [00:05<00:00,  5.09s/it]
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A2026-01-16 08:45:31,550 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:45:31,698 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+2026-01-16 08:45:31,702 INFO synthesis text 人工智能技术正在快速发展，语音合成是其中一个重要的应用方向。
+2026-01-16 08:45:31,702 INFO synthesis text 欢迎使用CosyVoice。
+WARNING 01-16 08:45:31 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:45:31 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+WARNING 01-16 08:45:31 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:32,077 INFO yield speech len 1.0, rtf 1.6324145793914795
+2026-01-16 08:45:32,114 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+WARNING 01-16 08:45:32 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:32,317 INFO synthesis text 在科技飞速发展的今天，深度学习和大语言模型正在改变我们的生活方式，语音合成技术也取得了突破性的进展，能够生成更加自然流畅的人声。
+WARNING 01-16 08:45:32 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:32,349 INFO yield speech len 0.76, rtf 2.33375492848848
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:05<00:00,  5.89s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:05<00:00,  5.89s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  15%|█▍        | 7/48 [00:05<00:20,  2.03it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:32,380 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:45:32,397 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:45:32 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:32,422 INFO yield speech len 1.0, rtf 1.8769707679748535
+2026-01-16 08:45:32,544 INFO yield speech len 1.0, rtf 1.9521381855010986
+2026-01-16 08:45:32,547 INFO yield speech len 1.0, rtf 1.9875638484954834
+2026-01-16 08:45:32,555 INFO yield speech len 1.0, rtf 1.9807190895080566
+2026-01-16 08:45:32,556 INFO yield speech len 1.0, rtf 1.9551095962524414
+2026-01-16 08:45:32,565 INFO yield speech len 1.0, rtf 1.9702420234680176
+2026-01-16 08:45:32,569 INFO yield speech len 1.0, rtf 1.9748718738555908
+2026-01-16 08:45:32,570 INFO yield speech len 1.0, rtf 1.9741277694702148
+2026-01-16 08:45:32,694 INFO yield speech len 1.36, rtf 0.7292971891515395
+2026-01-16 08:45:32,746 INFO yield speech len 1.36, rtf 0.7678997867247637
+2026-01-16 08:45:32,777 INFO yield speech len 1.36, rtf 0.7935189148958991
+2026-01-16 08:45:33,005 INFO synthesis text 今天天气真好。
+WARNING 01-16 08:45:33 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:33,022 INFO yield speech len 1.0, rtf 0.9440581798553467
+2026-01-16 08:45:33,892 INFO yield speech len 1.36, rtf 1.3072983306996961
+2026-01-16 08:45:33,978 INFO yield speech len 1.0, rtf 1.5551526546478271
+2026-01-16 08:45:34,099 INFO yield speech len 0.92, rtf 1.6622491504835044
+100%|██████████| 1/1 [00:07<00:00,  7.65s/it]100%|██████████| 1/1 [00:07<00:00,  7.65s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  17%|█▋        | 8/48 [00:07<00:32,  1.22it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A  0%|          | 0/1 [00:00<?, ?it/s]2026-01-16 08:45:34,107 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:45:34,397 INFO yield speech len 1.0, rtf 1.85300612449646
+2026-01-16 08:45:34,601 INFO yield speech len 1.0, rtf 2.0536203384399414
+2026-01-16 08:45:34,666 INFO synthesis text 欢迎使用CosyVoice。
+WARNING 01-16 08:45:34 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:34,802 INFO yield speech len 1.0, rtf 2.246713876724243
+2026-01-16 08:45:34,949 INFO yield speech len 1.0, rtf 2.3917722702026367
+2026-01-16 08:45:34,971 INFO yield speech len 1.0, rtf 2.4059274196624756
+2026-01-16 08:45:35,049 INFO yield speech len 1.0, rtf 2.4795727729797363
+2026-01-16 08:45:35,098 INFO yield speech len 1.08, rtf 2.2256531097270824
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:04<00:00,  4.48s/it][A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:04<00:00,  4.48s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  19%|█▉        | 9/48 [00:08<00:34,  1.15it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A2026-01-16 08:45:35,124 INFO yield speech len 1.36, rtf 2.0637766403310436
+2026-01-16 08:45:35,185 INFO yield speech len 1.36, rtf 2.0504884860094856
+2026-01-16 08:45:35,251 INFO yield speech len 1.0, rtf 2.504863977432251
+2026-01-16 08:45:35,276 INFO yield speech len 1.0, rtf 2.4984562397003174
+2026-01-16 08:45:35,307 INFO yield speech len 1.0, rtf 2.2849550247192383
+2026-01-16 08:45:35,333 INFO yield speech len 1.36, rtf 1.7115799819721893
+2026-01-16 08:45:35,416 INFO yield speech len 1.0, rtf 1.5244405269622803
+2026-01-16 08:45:35,431 INFO yield speech len 1.0, rtf 1.4530951976776123
+2026-01-16 08:45:35,457 INFO yield speech len 1.0, rtf 1.058866262435913
+2026-01-16 08:45:35,473 INFO yield speech len 1.0, rtf 0.8712372779846191
+2026-01-16 08:45:35,508 INFO yield speech len 1.0, rtf 0.7060286998748779
+2026-01-16 08:45:35,698 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+WARNING 01-16 08:45:35 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:36,120 INFO yield speech len 1.0, rtf 1.1709270477294922
+2026-01-16 08:45:36,184 INFO yield speech len 1.36, rtf 1.1165753883474012
+2026-01-16 08:45:36,291 INFO yield speech len 1.0, rtf 1.3199176788330078
+2026-01-16 08:45:36,546 INFO yield speech len 1.0, rtf 1.4961659908294678
+2026-01-16 08:45:36,613 INFO yield speech len 1.64, rtf 0.8704563466514029
+
+
+100%|██████████| 1/1 [00:05<00:00,  5.07s/it][A[A100%|██████████| 1/1 [00:05<00:00,  5.07s/it]
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  21%|██        | 10/48 [00:10<00:39,  1.05s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:36,772 INFO yield speech len 1.0, rtf 1.6470906734466553
+2026-01-16 08:45:37,014 INFO yield speech len 0.28, rtf 6.0046528066907605
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:04<00:00,  4.64s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:04<00:00,  4.64s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  23%|██▎       | 11/48 [00:10<00:31,  1.16it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:37,132 INFO synthesis text 人工智能技术正在快速发展，语音合成是其中一个重要的应用方向。
+WARNING 01-16 08:45:37 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:37,149 INFO yield speech len 1.0, rtf 1.8976781368255615
+2026-01-16 08:45:37,254 INFO yield speech len 1.0, rtf 1.97763991355896
+2026-01-16 08:45:37,301 INFO yield speech len 1.0, rtf 1.9937877655029297
+2026-01-16 08:45:37,493 INFO yield speech len 1.0, rtf 2.076018810272217
+2026-01-16 08:45:37,523 INFO yield speech len 1.0, rtf 2.0914862155914307
+2026-01-16 08:45:37,546 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+WARNING 01-16 08:45:37 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:37,701 INFO yield speech len 1.0, rtf 2.243802309036255
+2026-01-16 08:45:37,725 INFO yield speech len 1.0, rtf 2.251626491546631
+2026-01-16 08:45:37,733 INFO yield speech len 1.0, rtf 2.224339008331299
+2026-01-16 08:45:38,155 INFO yield speech len 1.36, rtf 1.8065340378705192
+2026-01-16 08:45:38,191 INFO yield speech len 0.84, rtf 2.3888420490991504
+100%|██████████| 1/1 [00:04<00:00,  4.09s/it]100%|██████████| 1/1 [00:04<00:00,  4.09s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  25%|██▌       | 12/48 [00:11<00:34,  1.05it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:38,254 INFO yield speech len 1.0, rtf 2.1335713863372803
+INFO 01-16 08:45:38 [loggers.py:127] Engine 000: Avg prompt throughput: 160.2 tokens/s, Avg generation throughput: 362.7 tokens/s, Running: 2 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.1%, Prefix cache hit rate: 0.0%
+2026-01-16 08:45:38,329 INFO yield speech len 1.0, rtf 2.0374035835266113
+2026-01-16 08:45:38,545 INFO yield speech len 1.0, rtf 1.998905897140503
+2026-01-16 08:45:38,717 INFO synthesis text 在科技飞速发展的今天，深度学习和大语言模型正在改变我们的生活方式，语音合成技术也取得了突破性的进展，能够生成更加自然流畅的人声。
+WARNING 01-16 08:45:38 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:38,774 INFO yield speech len 1.0, rtf 2.001596450805664
+2026-01-16 08:45:39,006 INFO yield speech len 1.0, rtf 1.8565895557403564
+2026-01-16 08:45:39,139 INFO yield speech len 1.0, rtf 1.884028434753418
+2026-01-16 08:45:39,165 INFO yield speech len 1.0, rtf 1.863426923751831
+2026-01-16 08:45:39,404 INFO yield speech len 1.36, rtf 1.6701274058398077
+2026-01-16 08:45:39,413 INFO yield speech len 1.0, rtf 1.919386625289917
+2026-01-16 08:45:39,435 INFO yield speech len 1.0, rtf 1.9118807315826416
+2026-01-16 08:45:39,481 INFO yield speech len 0.92, rtf 1.8996764784273894
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:13<00:00, 13.00s/it][A[A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:13<00:00, 13.00s/it]
+
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:39,487 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  27%|██▋       | 13/48 [00:12<00:36,  1.05s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:39,541 INFO yield speech len 1.0, rtf 1.8397703170776367
+2026-01-16 08:45:39,628 INFO yield speech len 1.0, rtf 1.9029066562652588
+2026-01-16 08:45:39,856 INFO yield speech len 1.36, rtf 1.6990712460349586
+2026-01-16 08:45:39,989 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:45:40 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:40,059 INFO yield speech len 1.0, rtf 1.9044709205627441
+2026-01-16 08:45:40,192 INFO yield speech len 1.12, rtf 1.663419391427721
+
+
+
+
+100%|██████████| 1/1 [00:13<00:00, 13.74s/it][A[A[A[A100%|██████████| 1/1 [00:13<00:00, 13.74s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  29%|██▉       | 14/48 [00:13<00:32,  1.05it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A2026-01-16 08:45:40,203 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:45:40,254 INFO yield speech len 1.0, rtf 2.000122547149658
+2026-01-16 08:45:40,561 INFO yield speech len 1.0, rtf 2.01545786857605
+2026-01-16 08:45:40,718 INFO synthesis text 今天天气真好。
+WARNING 01-16 08:45:40 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:40,847 INFO yield speech len 1.0, rtf 2.072474479675293
+2026-01-16 08:45:41,180 INFO yield speech len 1.0, rtf 2.174039363861084
+2026-01-16 08:45:41,186 INFO yield speech len 1.36, rtf 1.8148478339700136
+2026-01-16 08:45:41,406 INFO yield speech len 1.0, rtf 2.267487049102783
+2026-01-16 08:45:41,432 INFO yield speech len 1.0, rtf 2.2671432495117188
+2026-01-16 08:45:41,743 INFO yield speech len 1.0, rtf 2.338550567626953
+2026-01-16 08:45:41,760 INFO yield speech len 1.0, rtf 2.3468024730682373
+2026-01-16 08:45:41,769 INFO yield speech len 1.0, rtf 2.3337666988372803
+2026-01-16 08:45:41,875 INFO yield speech len 1.0, rtf 2.3342666625976562
+2026-01-16 08:45:41,942 INFO yield speech len 1.0, rtf 2.3133344650268555
+2026-01-16 08:45:42,061 INFO yield speech len 1.0, rtf 2.2047061920166016
+2026-01-16 08:45:42,258 INFO yield speech len 1.0, rtf 2.198747396469116
+2026-01-16 08:45:42,457 INFO yield speech len 1.0, rtf 2.2032387256622314
+2026-01-16 08:45:42,476 INFO yield speech len 1.36, rtf 1.828687506563523
+2026-01-16 08:45:42,679 INFO yield speech len 1.0, rtf 2.117471933364868
+2026-01-16 08:45:42,877 INFO yield speech len 1.0, rtf 2.0299160480499268
+2026-01-16 08:45:43,066 INFO yield speech len 1.36, rtf 1.726760759073145
+2026-01-16 08:45:43,086 INFO yield speech len 0.72, rtf 2.6471333371268377
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:12<00:00, 12.01s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:12<00:00, 12.01s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:43,093 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  31%|███▏      | 15/48 [00:16<00:50,  1.53s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:43,149 INFO yield speech len 1.0, rtf 1.9628407955169678
+2026-01-16 08:45:43,278 INFO yield speech len 1.0, rtf 1.8716137409210205
+2026-01-16 08:45:43,343 INFO yield speech len 1.0, rtf 1.9113078117370605
+2026-01-16 08:45:43,528 INFO yield speech len 1.0, rtf 1.785522222518921
+2026-01-16 08:45:43,570 INFO yield speech len 1.0, rtf 1.8104238510131836
+2026-01-16 08:45:43,610 INFO yield speech len 1.0, rtf 1.8409538269042969
+2026-01-16 08:45:43,611 INFO synthesis text 欢迎使用CosyVoice。
+WARNING 01-16 08:45:43 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:43,738 INFO yield speech len 1.0, rtf 1.8624804019927979
+2026-01-16 08:45:43,800 INFO yield speech len 1.0, rtf 1.8586506843566895
+2026-01-16 08:45:43,907 INFO yield speech len 1.0, rtf 1.8460633754730225
+2026-01-16 08:45:44,146 INFO yield speech len 1.0, rtf 1.8876745700836182
+2026-01-16 08:45:44,325 INFO yield speech len 1.52, rtf 1.215872795958268
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:04<00:00,  4.84s/it][A[A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:04<00:00,  4.84s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  33%|███▎      | 16/48 [00:17<00:46,  1.44s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:44,427 INFO yield speech len 1.0, rtf 1.96946382522583
+2026-01-16 08:45:44,669 INFO yield speech len 1.0, rtf 1.990344524383545
+2026-01-16 08:45:44,837 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+WARNING 01-16 08:45:44 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:44,914 INFO yield speech len 0.36, rtf 5.13330962922838
+
+
+
+
+100%|██████████| 1/1 [00:04<00:00,  4.72s/it][A[A[A[A100%|██████████| 1/1 [00:04<00:00,  4.72s/it]
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  35%|███▌      | 17/48 [00:18<00:36,  1.19s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:44,991 INFO yield speech len 1.0, rtf 2.1140553951263428
+2026-01-16 08:45:45,414 INFO yield speech len 1.0, rtf 2.2648873329162598
+2026-01-16 08:45:45,429 INFO synthesis text 人工智能技术正在快速发展，语音合成是其中一个重要的应用方向。
+WARNING 01-16 08:45:45 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:45,683 INFO yield speech len 1.0, rtf 2.40510892868042
+2026-01-16 08:45:45,763 INFO yield speech len 1.0, rtf 2.4194726943969727
+2026-01-16 08:45:46,030 INFO yield speech len 1.0, rtf 2.501495838165283
+2026-01-16 08:45:46,087 INFO yield speech len 1.0, rtf 2.517078161239624
+2026-01-16 08:45:46,211 INFO yield speech len 1.0, rtf 2.600820302963257
+2026-01-16 08:45:46,316 INFO yield speech len 1.0, rtf 2.5779013633728027
+2026-01-16 08:45:46,476 INFO yield speech len 1.0, rtf 2.5687990188598633
+2026-01-16 08:45:46,647 INFO yield speech len 1.0, rtf 2.846250057220459
+2026-01-16 08:45:46,699 INFO yield speech len 1.36, rtf 2.270332855336806
+2026-01-16 08:45:46,824 INFO yield speech len 1.0, rtf 2.677868604660034
+2026-01-16 08:45:47,150 INFO yield speech len 1.0, rtf 2.723123550415039
+2026-01-16 08:45:47,493 INFO yield speech len 1.0, rtf 2.8235645294189453
+2026-01-16 08:45:47,884 INFO yield speech len 1.0, rtf 2.8926312923431396
+2026-01-16 08:45:48,129 INFO yield speech len 1.36, rtf 2.420789879911086
+2026-01-16 08:45:48,204 INFO yield speech len 1.0, rtf 2.789529800415039
+2026-01-16 08:45:48,384 INFO yield speech len 1.0, rtf 2.700451135635376
+2026-01-16 08:45:48,477 INFO yield speech len 1.0, rtf 2.7136847972869873
+2026-01-16 08:45:48,537 INFO yield speech len 1.36, rtf 2.2854433340184825
+2026-01-16 08:45:48,628 INFO yield speech len 1.0, rtf 2.597810745239258
+2026-01-16 08:45:48,729 INFO yield speech len 1.0, rtf 2.6414175033569336
+2026-01-16 08:45:48,821 INFO yield speech len 1.0, rtf 2.609447479248047
+2026-01-16 08:45:48,916 INFO yield speech len 1.0, rtf 2.599810838699341
+2026-01-16 08:45:49,124 INFO yield speech len 1.0, rtf 2.646890640258789
+2026-01-16 08:45:49,138 INFO yield speech len 1.24, rtf 2.0089320598110074
+
+
+
+100%|██████████| 1/1 [00:22<00:00, 22.68s/it][A[A[A100%|██████████| 1/1 [00:22<00:00, 22.68s/it]
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  38%|███▊      | 18/48 [00:22<01:02,  2.10s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:49,162 INFO yield speech len 0.72, rtf 3.421202301979065
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:06<00:00,  6.07s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:06<00:00,  6.07s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:49,277 INFO yield speech len 1.0, rtf 2.451739549636841
+2026-01-16 08:45:49,599 INFO yield speech len 1.0, rtf 2.448539972305298
+2026-01-16 08:45:49,660 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+WARNING 01-16 08:45:49 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+INFO 01-16 08:45:49 [loggers.py:127] Engine 000: Avg prompt throughput: 73.6 tokens/s, Avg generation throughput: 122.0 tokens/s, Running: 0 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 0.0%
+2026-01-16 08:45:49,700 INFO synthesis text 在科技飞速发展的今天，深度学习和大语言模型正在改变我们的生活方式，语音合成技术也取得了突破性的进展，能够生成更加自然流畅的人声。
+WARNING 01-16 08:45:49 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:49,961 INFO yield speech len 1.0, rtf 2.4674904346466064
+2026-01-16 08:45:50,367 INFO yield speech len 1.0, rtf 2.48309326171875
+2026-01-16 08:45:50,666 INFO yield speech len 1.0, rtf 2.5361533164978027
+2026-01-16 08:45:51,029 INFO yield speech len 1.0, rtf 2.8248343467712402
+2026-01-16 08:45:51,271 INFO yield speech len 0.84, rtf 3.3255594117300853
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:24<00:00, 24.79s/it][A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:24<00:00, 24.79s/it]
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:51,276 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  42%|████▏     | 20/48 [00:24<00:45,  1.62s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:51,384 INFO yield speech len 1.0, rtf 2.9998528957366943
+2026-01-16 08:45:51,592 INFO yield speech len 1.0, rtf 3.0551555156707764
+2026-01-16 08:45:51,610 INFO yield speech len 0.88, rtf 3.388945081017234
+
+
+100%|██████████| 1/1 [00:14<00:00, 15.00s/it][A[A100%|██████████| 1/1 [00:14<00:00, 15.00s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  44%|████▍     | 21/48 [00:25<00:35,  1.30s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A2026-01-16 08:45:51,616 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+2026-01-16 08:45:51,784 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:45:51 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:51,858 INFO yield speech len 1.0, rtf 3.1285314559936523
+2026-01-16 08:45:51,991 INFO yield speech len 1.0, rtf 3.1694693565368652
+2026-01-16 08:45:52,089 INFO yield speech len 1.0, rtf 3.172319173812866
+2026-01-16 08:45:52,133 INFO synthesis text 今天天气真好。
+WARNING 01-16 08:45:52 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:52,278 INFO yield speech len 1.0, rtf 3.1542015075683594
+2026-01-16 08:45:52,499 INFO yield speech len 1.0, rtf 3.221978187561035
+2026-01-16 08:45:52,838 INFO yield speech len 1.0, rtf 3.238577365875244
+2026-01-16 08:45:53,267 INFO yield speech len 1.0, rtf 3.306143045425415
+2026-01-16 08:45:53,437 INFO yield speech len 1.36, rtf 2.7767607394386737
+2026-01-16 08:45:53,450 INFO yield speech len 1.36, rtf 2.7573005241506237
+2026-01-16 08:45:53,601 INFO yield speech len 1.0, rtf 3.2336394786834717
+2026-01-16 08:45:53,716 INFO yield speech len 1.0, rtf 3.0501277446746826
+2026-01-16 08:45:53,968 INFO yield speech len 1.0, rtf 2.9388747215270996
+2026-01-16 08:45:54,226 INFO yield speech len 1.0, rtf 2.841522216796875
+2026-01-16 08:45:54,379 INFO yield speech len 1.0, rtf 2.78702974319458
+2026-01-16 08:45:54,566 INFO yield speech len 1.0, rtf 2.7077081203460693
+2026-01-16 08:45:54,807 INFO yield speech len 1.0, rtf 2.7180774211883545
+2026-01-16 08:45:54,836 INFO yield speech len 1.04, rtf 2.736016878714928
+
+
+
+
+
+
+100%|██████████| 1/1 [00:28<00:00, 28.37s/it][A[A[A[A[A[A100%|██████████| 1/1 [00:28<00:00, 28.37s/it]
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A2026-01-16 08:45:54,840 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  46%|████▌     | 22/48 [00:28<00:46,  1.81s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:54,995 INFO yield speech len 1.36, rtf 2.3611896178301643
+2026-01-16 08:45:55,029 INFO yield speech len 1.0, rtf 2.7510640621185303
+2026-01-16 08:45:55,124 INFO yield speech len 1.4, rtf 2.1366872106279646
+
+
+100%|██████████| 1/1 [00:03<00:00,  3.51s/it][A[A100%|██████████| 1/1 [00:03<00:00,  3.51s/it]
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  48%|████▊     | 23/48 [00:28<00:34,  1.39s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:55,173 INFO yield speech len 1.0, rtf 2.674161195755005
+2026-01-16 08:45:55,349 INFO synthesis text 欢迎使用CosyVoice。
+WARNING 01-16 08:45:55 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:55,370 INFO yield speech len 1.0, rtf 2.5315916538238525
+2026-01-16 08:45:55,533 INFO yield speech len 1.0, rtf 2.2657992839813232
+2026-01-16 08:45:55,638 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+WARNING 01-16 08:45:55 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:56,012 INFO yield speech len 1.0, rtf 2.5750880241394043
+2026-01-16 08:45:56,020 INFO yield speech len 1.0, rtf 2.5698306560516357
+2026-01-16 08:45:56,298 INFO yield speech len 1.0, rtf 2.6969079971313477
+2026-01-16 08:45:56,433 INFO yield speech len 1.0, rtf 2.7170724868774414
+2026-01-16 08:45:56,767 INFO yield speech len 1.0, rtf 2.7990610599517822
+2026-01-16 08:45:57,197 INFO yield speech len 1.0, rtf 2.970977306365967
+2026-01-16 08:45:57,475 INFO yield speech len 1.0, rtf 3.0948750972747803
+2026-01-16 08:45:57,847 INFO yield speech len 1.0, rtf 3.2815208435058594
+2026-01-16 08:45:58,124 INFO yield speech len 1.0, rtf 3.3168160915374756
+2026-01-16 08:45:58,224 INFO yield speech len 1.24, rtf 2.603360145322738
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:06<00:00,  6.97s/it][A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:06<00:00,  6.97s/it]
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  50%|█████     | 24/48 [00:31<00:45,  1.88s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:58,494 INFO yield speech len 1.0, rtf 3.4649500846862793
+2026-01-16 08:45:58,645 INFO yield speech len 1.0, rtf 3.471627950668335
+2026-01-16 08:45:58,761 INFO synthesis text 人工智能技术正在快速发展，语音合成是其中一个重要的应用方向。
+WARNING 01-16 08:45:58 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:58,930 INFO yield speech len 0.28, rtf 12.715013538088115
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:32<00:00, 32.45s/it][A[A[A[A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:32<00:00, 32.45s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  52%|█████▏    | 25/48 [00:32<00:35,  1.54s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:59,028 INFO yield speech len 1.12, rtf 3.12026675258364
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:32<00:00, 32.55s/it][A[A[A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:32<00:00, 32.55s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:45:59,343 INFO yield speech len 1.36, rtf 2.936956987661474
+2026-01-16 08:45:59,444 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+WARNING 01-16 08:45:59 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:59,553 INFO yield speech len 1.0, rtf 3.540349006652832
+2026-01-16 08:45:59,554 INFO synthesis text 在科技飞速发展的今天，深度学习和大语言模型正在改变我们的生活方式，语音合成技术也取得了突破性的进展，能够生成更加自然流畅的人声。
+WARNING 01-16 08:45:59 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:45:59,568 INFO yield speech len 1.0, rtf 3.54761004447937
+INFO 01-16 08:45:59 [loggers.py:127] Engine 000: Avg prompt throughput: 135.5 tokens/s, Avg generation throughput: 141.4 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.1%, Prefix cache hit rate: 0.0%
+2026-01-16 08:45:59,815 INFO yield speech len 1.36, rtf 3.0718338840148025
+2026-01-16 08:45:59,831 INFO yield speech len 1.0, rtf 3.5325639247894287
+2026-01-16 08:45:59,964 INFO yield speech len 1.0, rtf 3.5301640033721924
+2026-01-16 08:46:00,194 INFO yield speech len 1.0, rtf 3.4274752140045166
+2026-01-16 08:46:00,399 INFO yield speech len 0.88, rtf 3.6383590914986352
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:29<00:00, 29.65s/it][A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:29<00:00, 29.65s/it]
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A2026-01-16 08:46:00,403 WARNING synthesis text 你好，我是语音合成系统。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  56%|█████▋    | 27/48 [00:33<00:24,  1.18s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:00,653 INFO yield speech len 1.0, rtf 3.1782987117767334
+2026-01-16 08:46:00,905 INFO synthesis text 你好，我是语音合成系统。
+WARNING 01-16 08:46:00 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:46:00,929 INFO yield speech len 1.0, rtf 3.0814929008483887
+2026-01-16 08:46:01,101 INFO yield speech len 1.0, rtf 2.9759998321533203
+2026-01-16 08:46:01,327 INFO yield speech len 1.0, rtf 2.832503080368042
+2026-01-16 08:46:01,448 INFO yield speech len 1.0, rtf 2.802964210510254
+2026-01-16 08:46:01,978 INFO yield speech len 1.36, rtf 2.3654218982247746
+2026-01-16 08:46:01,980 INFO yield speech len 0.84, rtf 3.138933579126994
+
+
+
+
+
+
+100%|██████████| 1/1 [00:07<00:00,  7.17s/it][A[A[A[A[A[A100%|██████████| 1/1 [00:07<00:00,  7.17s/it]
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A2026-01-16 08:46:02,010 WARNING synthesis text 今天天气真好。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  58%|█████▊    | 28/48 [00:35<00:25,  1.28s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:02,269 INFO yield speech len 1.0, rtf 2.7158656120300293
+2026-01-16 08:46:02,414 INFO yield speech len 1.0, rtf 2.8466546535491943
+2026-01-16 08:46:02,520 INFO synthesis text 今天天气真好。
+WARNING 01-16 08:46:02 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:46:02,546 INFO yield speech len 1.0, rtf 2.7309885025024414
+2026-01-16 08:46:02,719 INFO yield speech len 1.36, rtf 2.4079033557106464
+2026-01-16 08:46:02,738 INFO yield speech len 1.0, rtf 2.9069571495056152
+2026-01-16 08:46:02,829 INFO yield speech len 1.0, rtf 2.8645200729370117
+2026-01-16 08:46:02,870 INFO yield speech len 1.36, rtf 2.4383765809676223
+2026-01-16 08:46:03,069 INFO yield speech len 1.0, rtf 2.8744466304779053
+2026-01-16 08:46:03,420 INFO yield speech len 0.56, rtf 4.94042124067034
+
+
+
+
+100%|██████████| 1/1 [00:18<00:00, 18.50s/it][A[A[A[A100%|██████████| 1/1 [00:18<00:00, 18.50s/it]
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A2026-01-16 08:46:03,423 WARNING synthesis text 欢迎使用CosyVoice。 too short than prompt text You are a helpful assistant.<|endofprompt|>希望你以后能够做的比我还好呦。, this may lead to bad performance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  60%|██████    | 29/48 [00:36<00:24,  1.31s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:03,822 INFO yield speech len 1.0, rtf 2.8926148414611816
+2026-01-16 08:46:03,888 INFO yield speech len 0.64, rtf 4.354531317949295
+
+
+
+
+
+100%|██████████| 1/1 [00:37<00:00, 37.42s/it][A[A[A[A[A100%|██████████| 1/1 [00:37<00:00, 37.42s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  62%|██████▎   | 30/48 [00:37<00:19,  1.09s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A2026-01-16 08:46:03,925 INFO synthesis text 欢迎使用CosyVoice。
+WARNING 01-16 08:46:03 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:46:04,078 INFO yield speech len 1.36, rtf 2.3330336107927208
+2026-01-16 08:46:04,203 INFO yield speech len 1.0, rtf 2.8757500648498535
+2026-01-16 08:46:04,271 INFO yield speech len 0.6, rtf 4.704403877258301
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:29<00:00, 29.16s/it][A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:29<00:00, 29.16s/it]
+
+
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  65%|██████▍   | 31/48 [00:37<00:15,  1.12it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:04,413 INFO synthesis text 收到好友从远方寄来的生日礼物，那份意外的惊喜与深深的祝福让我心中充满了甜蜜的快乐，笑容如花儿般绽放。
+WARNING 01-16 08:46:04 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:46:04,741 INFO yield speech len 1.0, rtf 2.7627651691436768
+2026-01-16 08:46:04,777 INFO synthesis text 人工智能技术正在快速发展，语音合成是其中一个重要的应用方向。
+WARNING 01-16 08:46:04 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:46:05,023 INFO yield speech len 1.0, rtf 2.7546448707580566
+2026-01-16 08:46:05,257 INFO yield speech len 1.0, rtf 2.8427393436431885
+2026-01-16 08:46:05,347 INFO yield speech len 1.0, rtf 2.8004980087280273
+2026-01-16 08:46:05,540 INFO yield speech len 0.36, rtf 7.783252000808716
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:34<00:00, 34.00s/it][A[A[A[A[A[A[A100%|██████████| 1/1 [00:34<00:00, 34.00s/it]
+
+
+
+
+
+
+
+  0%|          | 0/1 [00:00<?, ?it/s][A[A[A[A[A[A[A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  67%|██████▋   | 32/48 [00:39<00:15,  1.00it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:05,671 INFO yield speech len 1.0, rtf 2.9525392055511475
+2026-01-16 08:46:05,756 INFO yield speech len 1.0, rtf 2.8858695030212402
+2026-01-16 08:46:05,769 INFO yield speech len 1.56, rtf 2.0824443071316447
+
+
+
+
+
+
+100%|██████████| 1/1 [00:03<00:00,  3.76s/it][A[A[A[A[A[A100%|██████████| 1/1 [00:03<00:00,  3.76s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  69%|██████▉   | 33/48 [00:39<00:11,  1.29it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:05,786 INFO yield speech len 1.0, rtf 2.9577267169952393
+2026-01-16 08:46:05,884 INFO yield speech len 1.0, rtf 2.8145244121551514
+2026-01-16 08:46:06,067 INFO synthesis text 八百标兵奔北坡，北坡炮兵并排跑，炮兵怕把标兵碰，标兵怕碰炮兵炮。这是一段绕口令，用来测试语音合成系统对复杂文本的处理能力。
+WARNING 01-16 08:46:06 [preprocess.py:60] Using None for EOS token id because tokenizer is not initialized
+2026-01-16 08:46:06,489 INFO yield speech len 1.2, rtf 2.2229234377543134
+
+100%|██████████| 1/1 [00:35<00:00, 35.15s/it][A100%|██████████| 1/1 [00:35<00:00, 35.15s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  71%|███████   | 34/48 [00:40<00:10,  1.31it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:06,679 INFO yield speech len 1.0, rtf 2.6012349128723145
+2026-01-16 08:46:06,786 INFO yield speech len 1.0, rtf 2.5827243328094482
+2026-01-16 08:46:06,898 INFO yield speech len 1.36, rtf 2.185420604313121
+2026-01-16 08:46:07,151 INFO yield speech len 1.0, rtf 2.409158945083618
+2026-01-16 08:46:07,242 INFO yield speech len 1.36, rtf 2.080341297037461
+2026-01-16 08:46:07,394 INFO yield speech len 1.0, rtf 2.369882106781006
+2026-01-16 08:46:07,549 INFO yield speech len 1.36, rtf 2.0382984596140243
+2026-01-16 08:46:07,574 INFO yield speech len 1.0, rtf 2.316518783569336
+2026-01-16 08:46:07,622 INFO yield speech len 1.0, rtf 2.2749264240264893
+2026-01-16 08:46:07,825 INFO yield speech len 1.0, rtf 2.1533098220825195
+2026-01-16 08:46:07,948 INFO yield speech len 1.0, rtf 2.1913812160491943
+2026-01-16 08:46:08,040 INFO yield speech len 1.0, rtf 2.253480911254883
+2026-01-16 08:46:08,107 INFO yield speech len 1.0, rtf 2.222878932952881
+2026-01-16 08:46:08,640 INFO yield speech len 1.36, rtf 1.8921338460024664
+2026-01-16 08:46:08,768 INFO yield speech len 1.2, rtf 1.7401758829752605
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:08<00:00,  8.37s/it][A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:08<00:00,  8.37s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  73%|███████▎  | 35/48 [00:42<00:15,  1.21s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:09,046 INFO yield speech len 1.0, rtf 2.2599544525146484
+2026-01-16 08:46:09,057 INFO yield speech len 0.96, rtf 2.2491291165351868
+
+
+
+
+100%|██████████| 1/1 [00:05<00:00,  5.64s/it][A[A[A[A100%|██████████| 1/1 [00:05<00:00,  5.64s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  75%|███████▌  | 36/48 [00:42<00:11,  1.07it/s][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:09,367 INFO yield speech len 1.0, rtf 2.2166409492492676
+2026-01-16 08:46:09,562 INFO yield speech len 1.0, rtf 2.320300579071045
+2026-01-16 08:46:09,718 INFO yield speech len 1.0, rtf 2.324120044708252
+2026-01-16 08:46:09,832 INFO yield speech len 1.0, rtf 2.2832858562469482
+2026-01-16 08:46:09,862 INFO yield speech len 1.0, rtf 2.2870593070983887
+2026-01-16 08:46:09,972 INFO yield speech len 1.0, rtf 2.3491928577423096
+2026-01-16 08:46:10,170 INFO yield speech len 1.0, rtf 2.345093250274658
+2026-01-16 08:46:10,179 INFO yield speech len 1.0, rtf 2.2311646938323975
+2026-01-16 08:46:10,269 INFO yield speech len 1.2, rtf 1.801025668780009
+100%|██████████| 1/1 [00:32<00:00, 32.08s/it]100%|██████████| 1/1 [00:32<00:00, 32.08s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  77%|███████▋  | 37/48 [00:43<00:11,  1.02s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:10,305 INFO yield speech len 1.0, rtf 2.265169620513916
+2026-01-16 08:46:10,652 INFO yield speech len 1.0, rtf 2.011601448059082
+2026-01-16 08:46:10,882 INFO yield speech len 1.0, rtf 1.8357739448547363
+2026-01-16 08:46:11,101 INFO yield speech len 1.0, rtf 1.7336595058441162
+2026-01-16 08:46:11,226 INFO yield speech len 1.0, rtf 1.6634786128997803
+2026-01-16 08:46:11,382 INFO yield speech len 1.0, rtf 1.6644644737243652
+2026-01-16 08:46:11,402 INFO yield speech len 1.0, rtf 1.5690793991088867
+2026-01-16 08:46:11,540 INFO yield speech len 1.0, rtf 1.678544521331787
+2026-01-16 08:46:11,559 INFO yield speech len 1.0, rtf 1.58730149269104
+2026-01-16 08:46:11,664 INFO yield speech len 1.0, rtf 1.4939241409301758
+2026-01-16 08:46:11,681 INFO yield speech len 1.0, rtf 1.5018858909606934
+2026-01-16 08:46:11,795 INFO yield speech len 1.0, rtf 1.489790916442871
+2026-01-16 08:46:12,174 INFO yield speech len 1.0, rtf 1.521977186203003
+2026-01-16 08:46:12,489 INFO yield speech len 1.0, rtf 1.6072113513946533
+2026-01-16 08:46:12,573 INFO yield speech len 0.68, rtf 2.1642881281235637
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:14<00:00, 14.33s/it][A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:14<00:00, 14.33s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  79%|███████▉  | 38/48 [00:46<00:14,  1.40s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:12,796 INFO yield speech len 1.0, rtf 1.570148229598999
+2026-01-16 08:46:13,045 INFO yield speech len 1.0, rtf 1.6627693176269531
+2026-01-16 08:46:13,058 INFO yield speech len 1.0, rtf 1.6557419300079346
+2026-01-16 08:46:13,197 INFO yield speech len 1.0, rtf 1.6564085483551025
+2026-01-16 08:46:13,300 INFO yield speech len 1.0, rtf 1.741023302078247
+2026-01-16 08:46:13,399 INFO yield speech len 1.0, rtf 1.7340376377105713
+2026-01-16 08:46:13,443 INFO yield speech len 1.0, rtf 1.761753797531128
+2026-01-16 08:46:13,588 INFO yield speech len 1.0, rtf 1.7926573753356934
+2026-01-16 08:46:13,878 INFO yield speech len 1.0, rtf 1.7036385536193848
+2026-01-16 08:46:14,155 INFO yield speech len 0.28, rtf 5.947038957050868
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:37<00:00, 37.14s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:37<00:00, 37.14s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  81%|████████▏ | 39/48 [00:47<00:13,  1.45s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:14,452 INFO yield speech len 1.0, rtf 1.6549403667449951
+2026-01-16 08:46:14,719 INFO yield speech len 1.0, rtf 1.6731061935424805
+2026-01-16 08:46:14,727 INFO yield speech len 1.0, rtf 1.6697332859039307
+2026-01-16 08:46:14,834 INFO yield speech len 1.0, rtf 1.6367747783660889
+2026-01-16 08:46:14,856 INFO yield speech len 1.0, rtf 1.5552632808685303
+2026-01-16 08:46:14,960 INFO yield speech len 1.0, rtf 1.561190128326416
+2026-01-16 08:46:14,989 INFO yield speech len 1.0, rtf 1.54628324508667
+2026-01-16 08:46:15,155 INFO yield speech len 1.0, rtf 1.5663979053497314
+2026-01-16 08:46:15,323 INFO yield speech len 1.0, rtf 1.4444499015808105
+2026-01-16 08:46:15,965 INFO yield speech len 1.0, rtf 1.51316237449646
+2026-01-16 08:46:16,307 INFO yield speech len 0.88, rtf 1.7949405041607944
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:12<00:00, 12.03s/it][A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:12<00:00, 12.03s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  83%|████████▎ | 40/48 [00:49<00:13,  1.66s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:16,349 INFO yield speech len 1.0, rtf 1.6304330825805664
+2026-01-16 08:46:16,566 INFO yield speech len 1.0, rtf 1.710132122039795
+2026-01-16 08:46:16,567 INFO yield speech len 1.0, rtf 1.7326819896697998
+2026-01-16 08:46:16,609 INFO yield speech len 1.0, rtf 1.6486988067626953
+2026-01-16 08:46:16,675 INFO yield speech len 1.0, rtf 1.6854138374328613
+2026-01-16 08:46:16,732 INFO yield speech len 0.28, rtf 5.6325665542057575
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:32<00:00, 32.42s/it][A[A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:32<00:00, 32.42s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  85%|████████▌ | 41/48 [00:50<00:09,  1.30s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:16,852 INFO yield speech len 1.0, rtf 1.5288515090942383
+2026-01-16 08:46:17,328 INFO yield speech len 1.0, rtf 1.3634381294250488
+2026-01-16 08:46:17,679 INFO yield speech len 1.0, rtf 1.32997727394104
+2026-01-16 08:46:17,874 INFO yield speech len 1.0, rtf 1.306997299194336
+2026-01-16 08:46:17,935 INFO yield speech len 1.0, rtf 1.368971347808838
+2026-01-16 08:46:17,952 INFO yield speech len 1.0, rtf 1.3431706428527832
+2026-01-16 08:46:18,021 INFO yield speech len 1.0, rtf 1.3456580638885498
+2026-01-16 08:46:18,112 INFO yield speech len 1.0, rtf 1.260650634765625
+2026-01-16 08:46:18,622 INFO yield speech len 1.0, rtf 1.2939064502716064
+2026-01-16 08:46:19,278 INFO yield speech len 1.0, rtf 1.5979952812194824
+2026-01-16 08:46:19,569 INFO yield speech len 1.0, rtf 1.695131778717041
+2026-01-16 08:46:19,668 INFO yield speech len 1.0, rtf 1.7329638004302979
+2026-01-16 08:46:19,677 INFO yield speech len 1.0, rtf 1.7249033451080322
+2026-01-16 08:46:19,729 INFO yield speech len 1.0, rtf 1.7080187797546387
+2026-01-16 08:46:19,806 INFO yield speech len 1.0, rtf 1.6935489177703857
+2026-01-16 08:46:20,054 INFO yield speech len 0.76, rtf 1.8836278664438348
+
+
+
+
+
+100%|██████████| 1/1 [00:16<00:00, 16.17s/it][A[A[A[A[A100%|██████████| 1/1 [00:16<00:00, 16.17s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  88%|████████▊ | 42/48 [00:53<00:11,  1.90s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:20,830 INFO yield speech len 1.04, rtf 1.4921032465421236
+
+
+
+100%|██████████| 1/1 [00:31<00:00, 31.69s/it][A[A[A100%|██████████| 1/1 [00:31<00:00, 31.69s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  90%|████████▉ | 43/48 [00:54<00:07,  1.56s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:21,109 INFO yield speech len 1.0, rtf 1.5398142337799072
+2026-01-16 08:46:21,272 INFO yield speech len 1.0, rtf 1.6040446758270264
+2026-01-16 08:46:21,278 INFO yield speech len 1.0, rtf 1.6009652614593506
+2026-01-16 08:46:21,405 INFO yield speech len 1.0, rtf 1.6755943298339844
+2026-01-16 08:46:21,419 INFO yield speech len 1.0, rtf 1.612734079360962
+2026-01-16 08:46:22,329 INFO yield speech len 0.52, rtf 2.3452089383051944
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:33<00:00, 33.17s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:33<00:00, 33.17s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  92%|█████████▏| 44/48 [00:55<00:06,  1.54s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:22,500 INFO yield speech len 0.6, rtf 2.0462286472320557
+
+
+100%|██████████| 1/1 [00:27<00:00, 27.38s/it][A[A100%|██████████| 1/1 [00:27<00:00, 27.38s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  94%|█████████▍| 45/48 [00:56<00:03,  1.13s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:22,552 INFO yield speech len 1.0, rtf 1.273463487625122
+2026-01-16 08:46:22,616 INFO yield speech len 1.0, rtf 1.2111399173736572
+2026-01-16 08:46:22,649 INFO yield speech len 1.0, rtf 1.2294931411743164
+2026-01-16 08:46:23,569 INFO yield speech len 0.92, rtf 1.0357781596805737
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:24<00:00, 24.54s/it][A[A[A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:24<00:00, 24.54s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  96%|█████████▌| 46/48 [00:57<00:02,  1.11s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:23,617 INFO yield speech len 1.0, rtf 1.06551194190979
+2026-01-16 08:46:23,640 INFO yield speech len 1.0, rtf 0.991194486618042
+2026-01-16 08:46:24,188 INFO yield speech len 1.0, rtf 0.5474996566772461
+2026-01-16 08:46:24,191 INFO yield speech len 1.0, rtf 0.5732464790344238
+2026-01-16 08:46:24,954 INFO yield speech len 1.24, rtf 0.6155792743928971
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:26<00:00, 26.02s/it][A[A[A[A[A[A[A[A[A[A[A[A[A100%|██████████| 1/1 [00:26<00:00, 26.02s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16:  98%|█████████▊| 47/48 [00:58<00:01,  1.19s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[A2026-01-16 08:46:25,003 INFO yield speech len 1.0, rtf 0.8153069019317627
+2026-01-16 08:46:25,376 INFO yield speech len 1.0, rtf 0.37311887741088867
+2026-01-16 08:46:25,660 INFO yield speech len 0.4, rtf 0.7092553377151489
+
+
+
+
+
+
+
+100%|██████████| 1/1 [00:20<00:00, 20.12s/it][A[A[A[A[A[A[A100%|██████████| 1/1 [00:20<00:00, 20.12s/it]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Concurrency 16: 100%|██████████| 48/48 [00:59<00:00,  1.05s/it][A[A[A[A[A[A[A[A[A[A[A[A[A[A[A[AConcurrency 16: 100%|██████████| 48/48 [00:59<00:00,  1.23s/it]
+
+================================================================================
+📊 BENCHMARK RESULTS - Concurrency: 16
+================================================================================
+Total Requests: 48 | Successful: 48 | Failed: 0
+
+⏱️  TTFB (Time To First Byte) - Lower is better:
+   Min:    1.6616s
+   Mean:   3.5427s
+   Median: 3.7245s
+   P95:    4.2896s
+   Max:    4.6899s
+
+🎵 RTF (Real-Time Factor) - Lower is better:
+   Min:    1.3630
+   Mean:   2.2935
+   Median: 2.3622
+   P95:    2.8876
+   Max:    3.2590
+
+⚡ Total Latency:
+   Min:    3.5099s
+   Mean:   16.5962s
+   Median: 13.3769s
+   P95:    34.7511s
+   Max:    37.4257s
+
+📈 Throughput (chars/sec):
+   Min:    1.19
+   Mean:   2.11
+   Max:    3.42
+
+🚀 Aggregate System Throughput: 42.80 chars/sec
+
+💾 Full results saved to: benchmark_results.json
+
+
+================================================================================
+📊 SUMMARY ACROSS ALL CONCURRENCY LEVELS
+================================================================================
+
+Concurrency     Mean TTFB (s)   P95 TTFB (s)    Mean RTF        P95 RTF        
+---------------------------------------------------------------------------
+1               0.8931          0.9832          0.4327          0.4728         
+2               1.1325          1.3887          0.5030          0.7445         
+4               1.3751          1.7418          0.6838          0.8759         
+8               1.9999          2.7122          1.2061          1.7270         
+16              3.5427          4.2896          2.2935          2.8876         
+
+✅ Benchmark complete!
+[rank0]:[W116 08:46:29.751902777 ProcessGroupNCCL.cpp:1538] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
